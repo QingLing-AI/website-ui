@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
               aria-haspopup="true"
               aria-expanded={isMobileDropdownOpen}
             >
-              {i18n.language === 'zh' ? '中文' : i18n.language === 'zhTW' ? '繁體' : 'EN'}
+              {i18n.language === 'zh' ? '中文简体' : i18n.language === 'zhTW' ? '中文繁體' : 'EN'}
               <i className={`ml-1 fas fa-chevron-down text-xs transition-transform ${isMobileDropdownOpen ? 'transform rotate-180' : ''}`}></i>
             </button>
             {isMobileDropdownOpen && (
@@ -117,13 +117,13 @@ const Navbar: React.FC = () => {
                   onClick={() => changeLanguage('zh')}
                   className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'zh' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
-                  中文
+                  中文简体
                 </button>
                 <button
                   onClick={() => changeLanguage('zhTW')}
                   className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'zhTW' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
-                  繁體
+                  中文繁體
                 </button>
                 <button
                   onClick={() => changeLanguage('en')}
