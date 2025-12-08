@@ -8,11 +8,11 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-800 text-white pt-12 pb-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between mb-8">
-          <div className="mb-8 md:mb-0 md:w-1/3">
-            <img 
-              src="https://www.yanqueai.com/vilook/imgtoimg/63/a2/fdf64c78cf6dfdf59d79f615cfd6693ddefc.png" 
-              alt="Qingling Logo" 
-              className="h-12 mb-4 brightness-0 invert opacity-90"
+          <div className="mb-8 md:mb-0">
+            <img
+              src="https://www.yanqueai.com/vilook/imgtoimg/63/a2/fdf64c78cf6dfdf59d79f615cfd6693ddefc.png"
+              alt="Qingling Logo"
+              className="h-12 mb-4"
             />
             <p className="text-gray-400 max-w-xs text-sm leading-relaxed">
               {t('footer.desc')}
@@ -26,10 +26,10 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:w-2/3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <h4 className="text-lg font-semibold mb-4">{t('footer.links')}</h4>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2">
                 {['home', 'about', 'services', 'team', 'contact'].map((link) => (
                   <li key={link}>
                     <a href={`#${link}`} className="text-gray-400 hover:text-primary transition-colors">
