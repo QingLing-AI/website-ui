@@ -1,0 +1,123 @@
+import React, { FormEvent } from 'react';
+import { useTranslation } from 'react-i18next';
+
+const Contact: React.FC = () => {
+  const { t } = useTranslation();
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    alert(t('感谢您的留言！我们会尽快与您联系。')); // Simple alert as per original script
+    // In a real app, you would send this to a backend
+    const form = e.target as HTMLFormElement;
+    form.reset();
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contact.title')}</h2>
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            {t('contact.subtitle')}
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">{t('contact.form.name')}</label>
+                <input required type="text" id="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.name')} />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">{t('contact.form.email')}</label>
+                <input required type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.email')} />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">{t('contact.form.phone')}</label>
+                <input type="tel" id="phone" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.phone')} />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">{t('contact.form.msg')}</label>
+                <textarea required id="message" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.msg')}></textarea>
+              </div>
+              <button type="submit" className="w-full bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-medium shadow-lg transition-transform transform hover:scale-[1.02]">
+                {t('contact.form.btn')}
+              </button>
+            </form>
+          </div>
+
+          <div className="md:w-1/2 md:pl-8">
+            <div className="bg-gray-50 rounded-lg p-8 h-full border border-gray-100 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 text-primary">{t('contact.info.title')}</h3>
+
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mr-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-sm">
+                      <i className="fas fa-map-marker-alt"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-1">{t('contact.info.addrTitle')}</h4>
+                    <p className="text-gray-600">{t('contact.info.addr')}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mr-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-sm">
+                      <i className="fas fa-phone"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-1">{t('contact.info.phoneTitle')}</h4>
+                    <p className="text-gray-600">+86 13717028300</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mr-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-sm">
+                      <i className="fas fa-envelope"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-1">{t('contact.info.emailTitle')}</h4>
+                    <p className="text-gray-600">kf@qingling-ai.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mr-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-sm">
+                      <i className="fas fa-clock"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-1">{t('contact.info.hoursTitle')}</h4>
+                    <p className="text-gray-600">{t('contact.info.hours')}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 border-t border-gray-200 pt-6">
+                <h4 className="text-lg font-semibold mb-4">{t('contact.info.follow')}</h4>
+                <div className="flex space-x-4">
+                  {['weixin', 'linkedin', 'github', 'zhihu'].map((social) => (
+                    <a key={social} href="#" className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all transform hover:scale-110">
+                      <i className={`fab fa-${social}`}></i>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
