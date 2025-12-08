@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../hooks/I18nContext';
 import { NAV_ITEMS } from '../constants';
 
 const Navbar: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const { currentLanguage, changeLanguage: changeLang, getI18nDisplayName } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktopDropdownOpen, setIsDesktopDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
@@ -14,7 +16,7 @@ const Navbar: React.FC = () => {
   };
 
   const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
+    changeLang(lang);
     setIsDesktopDropdownOpen(false);
     setIsMobileDropdownOpen(false);
   };
@@ -63,26 +65,26 @@ const Navbar: React.FC = () => {
               aria-haspopup="true"
               aria-expanded={isDesktopDropdownOpen}
             >
-              {i18n.language === 'zh' ? '中文' : i18n.language === 'zhTW' ? '中文繁體' : 'EN'}
+              {getI18nDisplayName()}
               <i className={`ml-1 fas fa-chevron-down text-xs transition-transform ${isDesktopDropdownOpen ? 'transform rotate-180' : ''}`}></i>
             </button>
             {isDesktopDropdownOpen && (
               <div className="absolute right-0 mt-1 w-32 bg-white shadow-lg rounded-md z-50 border border-gray-200">
                 <button
                   onClick={() => changeLanguage('zh')}
-                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'zh' ? 'text-primary font-medium' : 'text-gray-700'}`}
+                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentLanguage === 'zh' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
-                  中文
+                  中文简体
                 </button>
                 <button
                   onClick={() => changeLanguage('zhTW')}
-                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'zhTW' ? 'text-primary font-medium' : 'text-gray-700'}`}
+                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentLanguage === 'zhTW' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
-                  繁體
+                  中文繁體
                 </button>
                 <button
                   onClick={() => changeLanguage('en')}
-                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'en' ? 'text-primary font-medium' : 'text-gray-700'}`}
+                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentLanguage === 'en' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
                   English
                 </button>
@@ -108,26 +110,26 @@ const Navbar: React.FC = () => {
               aria-haspopup="true"
               aria-expanded={isMobileDropdownOpen}
             >
-              {i18n.language === 'zh' ? '中文简体' : i18n.language === 'zhTW' ? '中文繁體' : 'EN'}
+              {getI18nDisplayName()}
               <i className={`ml-1 fas fa-chevron-down text-xs transition-transform ${isMobileDropdownOpen ? 'transform rotate-180' : ''}`}></i>
             </button>
             {isMobileDropdownOpen && (
               <div className="absolute right-0 mt-1 w-32 bg-white shadow-lg rounded-md z-50 border border-gray-200">
                 <button
                   onClick={() => changeLanguage('zh')}
-                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'zh' ? 'text-primary font-medium' : 'text-gray-700'}`}
+                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentLanguage === 'zh' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
                   中文简体
                 </button>
                 <button
                   onClick={() => changeLanguage('zhTW')}
-                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'zhTW' ? 'text-primary font-medium' : 'text-gray-700'}`}
+                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentLanguage === 'zhTW' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
                   中文繁體
                 </button>
                 <button
                   onClick={() => changeLanguage('en')}
-                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${i18n.language === 'en' ? 'text-primary font-medium' : 'text-gray-700'}`}
+                  className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentLanguage === 'en' ? 'text-primary font-medium' : 'text-gray-700'}`}
                 >
                   English
                 </button>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { I18nProvider } from './hooks/I18nContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -32,27 +33,29 @@ function App() {
   };
 
   return (
-    <div className="font-sans antialiased text-gray-800">
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Team />
-      <Testimonials />
-      <Contact />
-      <Footer />
+    <I18nProvider>
+      <div className="font-sans antialiased text-gray-800">
+        <Navbar />
+        <Hero />
+        <About />
+        <Services />
+        <Team />
+        <Testimonials />
+        <Contact />
+        <Footer />
 
-      {/* Back to top button */}
-      <button
-        onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg transform transition-all duration-300 z-50 ${
-          showBackToTop ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-        } hover:bg-primary-dark`}
-        aria-label="Back to top"
-      >
-        <i className="fas fa-arrow-up"></i>
-      </button>
-    </div>
+        {/* Back to top button */}
+        <button
+          onClick={scrollToTop}
+          className={`fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg transform transition-all duration-300 z-50 ${
+            showBackToTop ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+          } hover:bg-primary-dark`}
+          aria-label="Back to top"
+        >
+          <i className="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </I18nProvider>
   );
 }
 
