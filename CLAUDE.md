@@ -34,6 +34,7 @@ This document describes the development setup for the project using TypeScript +
 
 The project is organized into the following components:
 
+- `src/hooks` - React hooks
 - `src/components/layouts` - Layout components
 - `src/components/sections` - Page sections
 - `src/components/ui` - Reusable UI components
