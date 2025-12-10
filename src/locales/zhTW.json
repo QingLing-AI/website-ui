@@ -54,7 +54,7 @@
   "contact": {
     "title": "聯絡我們",
     "subtitle": "無論您有任何問題或需求，都可以透過以下方式與我們取得聯絡",
-    "form": { "name": "您的姓名", "email": "電子郵件", "phone": "聯絡電話", "msg": "留言內容", "btn": "提交資訊" },
+    "form": { "name": "您的姓名", "email": "電子郵件", "phone": "聯絡電話", "msg": "留言內容", "btn": "提交資訊", "submitting": "提交中..." },
     "info": { "title": "聯絡方式", "addrTitle": "公司地址", "addr": "深圳市南山區科技園區高新南一道TCL大廈", "phoneTitle": "聯絡電話", "emailTitle": "電子郵件", "hoursTitle": "工作時間", "hours": "週一至週五: 9:00 - 18:00", "follow": "關注我們" }
   },
   "footer": {

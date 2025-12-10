@@ -1,15 +1,47 @@
-import React, { FormEvent } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    alert(t('感谢您的留言！我们会尽快与您联系。')); // Simple alert as per original script
-    // In a real app, you would send this to a backend
+
     const form = e.target as HTMLFormElement;
-    form.reset();
+    const formData = new FormData(form);
+
+    setIsLoading(true);
+
+    try {
+      const data = {
+        name: formData.get('name') as string,
+        email: formData.get('email') as string,
+        phone: formData.get('phone') as string,
+        content: formData.get('content') as string,
+      };
+
+      const response = await fetch('/api/v1/contact', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_QINGLING_AI_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert(t('感谢您的留言！我们会尽快与您联系。'));
+        form.reset();
+      } else {
+        alert(t('提交失败，请稍后重试。'));
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert(t('网络错误，请稍后重试。'));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -28,22 +60,32 @@ const Contact: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-gray-700 font-medium mb-2">{t('contact.form.name')}</label>
-                <input required type="text" id="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.name')} />
+                <input required type="text" id="name" name="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.name')} />
               </div>
               <div>
                 <label htmlFor="email" className="block text-gray-700 font-medium mb-2">{t('contact.form.email')}</label>
-                <input required type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.email')} />
+                <input required type="email" id="email" name="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.email')} />
               </div>
               <div>
                 <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">{t('contact.form.phone')}</label>
-                <input type="tel" id="phone" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.phone')} />
+                <input type="tel" id="phone" name="phone" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.phone')} />
               </div>
               <div>
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">{t('contact.form.msg')}</label>
-                <textarea required id="message" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.msg')}></textarea>
+                <label htmlFor="content" className="block text-gray-700 font-medium mb-2">{t('contact.form.msg')}</label>
+                <textarea required id="content" name="content" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.msg')}></textarea>
               </div>
-              <button type="submit" className="w-full bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-medium shadow-lg transition-transform transform hover:scale-[1.02]">
-                {t('contact.form.btn')}
+              <button type="submit" disabled={isLoading} className={`w-full ${isLoading ? 'bg-primary-dark opacity-70 cursor-not-allowed' : 'bg-primary hover:bg-primary-dark'} text-white px-8 py-3 rounded-full font-medium shadow-lg transition-all ${!isLoading ? 'transform hover:scale-[1.02]' : ''}`}>
+                {isLoading ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    {t('contact.form.submitting')}
+                  </span>
+                ) : (
+                  t('contact.form.btn')
+                )}
               </button>
             </form>
           </div>
