@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -24,7 +26,6 @@ const Contact: React.FC = () => {
       const response = await fetch('/api/v1/contact', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_QINGLING_AI_API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),

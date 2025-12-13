@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -10,7 +12,7 @@ const Hero: React.FC = () => {
         <div className="md:w-1/2 mt-10 md:mt-0 z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             <span className="block">{t('hero.title1')}</span>
-            <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-primary-dark bg-clip-text text-transparent">
               {t('hero.title2')}
             </span>
           </h1>

@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '../hooks/I18nContext';
+import { useLanguage } from '../i18n-provider';
 import { NAV_ITEMS } from '../constants';
 
 const Navbar: React.FC = () => {
@@ -15,7 +17,7 @@ const Navbar: React.FC = () => {
     setIsMobileDropdownOpen(false); // Close language dropdown when menu toggles
   };
 
-  const changeLanguage = (lang: string) => {
+  const changeLanguage = (lang: 'zh' | 'zhTW' | 'en') => {
     changeLang(lang);
     setIsDesktopDropdownOpen(false);
     setIsMobileDropdownOpen(false);
