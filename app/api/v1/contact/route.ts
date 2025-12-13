@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sendContactEmail } from '@/lib/mail';
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,15 +15,34 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // You can add your business logic here, such as:
-    // - Sending the data to a database
-    // - Sending an email notification
-    // - Forwarding to another service
-    console.log('Contact form submission:', { name, email, phone, content });
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      );
+    }
 
-    // For now, just return a success response
+    // Send email using TLS SMTP
+    const emailSent = await sendContactEmail({ name, email, phone, content });
+
+    if (!emailSent) {
+      console.error('Failed to send contact form email');
+      return NextResponse.json(
+        { error: 'Failed to send email notification' },
+        { status: 500 }
+      );
+    }
+
+    console.log('Contact form submission processed and email sent:', { name, email, phone, content });
+
+    // Return success response
     return NextResponse.json(
-      { message: 'Contact form submitted successfully' },
+      {
+        message: 'Contact form submitted successfully',
+        emailSent: true
+      },
       { status: 200 }
     );
   } catch (error) {
