@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
@@ -25,10 +26,13 @@ const About: React.FC = () => {
 
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10">
-            <img 
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" 
-              alt="Our Team" 
-              className="rounded-lg shadow-lg w-full transform hover:scale-[1.01] transition duration-500"
+            <Image
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
+              alt="Our Team"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg w-full h-auto transform hover:scale-[1.01] transition duration-500"
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <div className="md:w-1/2">

@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "i18next": "^25.7.2",
     "i18next-browser-languagedetector": "^8.2.0",
@@ -29,6 +30,8 @@
     "@types/react": "^19.2.1",
     "@types/react-dom": "^19.2.1",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10",
     "postcss": "^8.5.2",
     "tailwindcss": "~4.1.0",
     "typescript": "~5.8.2"

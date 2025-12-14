@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../i18n-provider';
 import { NAV_ITEMS } from '../constants';
@@ -40,10 +41,12 @@ const Navbar: React.FC = () => {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
         <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="logo-link cursor-pointer">
-          <img
+          <Image
             src="https://www.yanqueai.com/vilook/imgtoimg/63/a2/fdf64c78cf6dfdf59d79f615cfd6693ddefc.png"
             alt="Qingling Tech Logo"
-            className="h-12"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
           />
         </a>
 

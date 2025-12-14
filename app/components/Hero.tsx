@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 const Hero: React.FC = () => {
@@ -29,10 +30,13 @@ const Hero: React.FC = () => {
           </div>
         </div>
         <div className="md:w-1/2 flex justify-center z-10">
-          <img 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" 
-            alt="AI Technology" 
-            className="w-full max-w-lg rounded-lg shadow-xl transform transition hover:scale-[1.02] duration-500"
+          <Image
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
+            alt="AI Technology"
+            width={600}
+            height={400}
+            className="w-full max-w-lg rounded-lg shadow-xl transform transition hover:scale-[1.02] duration-500 h-auto"
+            style={{ objectFit: 'cover' }}
           />
         </div>
       </div>

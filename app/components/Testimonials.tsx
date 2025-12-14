@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image'
 import { useTranslation } from 'react-i18next';
 import { TESTIMONIALS } from '../constants';
 
@@ -25,10 +26,12 @@ const Testimonials: React.FC = () => {
                 <i className="fas fa-quote-left text-3xl opacity-80"></i>
               </div>
               <p className="text-gray-600 mb-6 italic">
-                "{t(item.content)}"
+                {t(item.content)}
               </p>
               <div className="flex items-center">
-                <img 
+                <Image
+                  width={100} 
+                  height={100}
                   src={item.avatar} 
                   alt={t(item.author)} 
                   className="w-12 h-12 rounded-full mr-4 object-cover shadow-sm"

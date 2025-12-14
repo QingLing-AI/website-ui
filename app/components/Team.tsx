@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { TEAM_MEMBERS } from '../constants';
 
@@ -22,10 +23,13 @@ const Team: React.FC = () => {
           {TEAM_MEMBERS.map((member, index) => (
             <div key={index} className="bg-white rounded-lg shadow p-6 text-center hover:shadow-lg transition-all duration-300 border border-gray-100">
               <div className="mb-4 relative w-40 h-40 mx-auto">
-                <img 
-                  src={member.image} 
-                  alt={t(member.name)} 
+                <Image
+                  src={member.image}
+                  alt={t(member.name)}
+                  width={160}
+                  height={160}
                   className="w-full h-full object-cover rounded-full border-4 border-green-50"
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
               <h3 className="text-xl font-bold mb-1">{t(member.name)}</h3>

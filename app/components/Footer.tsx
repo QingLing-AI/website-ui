@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import { relative } from 'path';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -11,11 +13,12 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between mb-8">
           <div className="mb-8 md:mb-0">
-            <img
-              src="https://www.yanqueai.com/vilook/imgtoimg/63/a2/fdf64c78cf6dfdf59d79f615cfd6693ddefc.png"
-              alt="Qingling Logo"
-              className="h-12 mb-4"
-            />
+            <div className="h-12 mb-4">
+              <Image width={48} height={48}
+                src="https://www.yanqueai.com/vilook/imgtoimg/63/a2/fdf64c78cf6dfdf59d79f615cfd6693ddefc.png"
+                alt="Qingling Logo"
+              />
+            </div>
             <p className="text-gray-400 max-w-xs text-sm leading-relaxed">
               {t('footer.desc')}
             </p>
