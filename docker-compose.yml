@@ -2,9 +2,10 @@ version: '3.8'
 
 services:
   website-ui:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: crpi-7x3cvpk5cndgayp8.cn-shenzhen.personal.cr.aliyuncs.com/qingling-ai/website:latest
     ports:
       - "3000:3000"
     environment:
