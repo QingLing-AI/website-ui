@@ -55,7 +55,7 @@
     "title": "联系我们",
     "subtitle": "无论您有任何问题或需求，都可以通过以下方式与我们取得联系",
     "form": { "name": "您的姓名", "email": "电子邮箱", "phone": "联系电话", "msg": "留言内容", "btn": "提交信息", "submitting": "提交中..." },
-    "info": { "title": "联系方式", "addrTitle": "公司地址", "addr": "深圳市南山区科技园区高新南一道TCL大厦", "phoneTitle": "联系电话", "emailTitle": "电子邮箱", "hoursTitle": "工作时间", "hours": "周一至周五: 9:00 - 18:00", "follow": "关注我们" }
+    "info": { "title": "联系方式", "addrTitle": "公司地址", "addr": "香港观塘伟业街221号美德工业大厦D座10楼D5室", "phoneTitle": "联系电话", "emailTitle": "电子邮箱", "hoursTitle": "工作时间", "hours": "周一至周五: 9:00 - 18:00", "follow": "关注我们" }
   },
   "footer": {
     "desc": "轻羚科技致力于企业级大模型推理性能优化和AI智能体开发，提供全方位AI解决方案。",

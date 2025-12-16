@@ -55,7 +55,7 @@
     "title": "Contact Us",
     "subtitle": "Feel free to reach out to us for any questions or needs",
     "form": { "name": "Your Name", "email": "Email Address", "phone": "Phone Number", "msg": "Message", "btn": "Submit", "submitting": "Submitting..." },
-    "info": { "title": "Contact Info", "addrTitle": "Address", "addr": "TCL Building, Gaoxin South 1st Road, Nanshan District, Shenzhen", "phoneTitle": "Phone", "emailTitle": "Email", "hoursTitle": "Working Hours", "hours": "Mon-Fri: 9:00 - 18:00", "follow": "Follow Us" }
+    "info": { "title": "Contact Info", "addrTitle": "Address", "addr": "Room 5 Flat D, 10/F, Mai Tak Ind Bldg, 221 Wai Yip Street, Kwun Tong, Kowloon", "phoneTitle": "Phone", "emailTitle": "Email", "hoursTitle": "Working Hours", "hours": "Mon-Fri: 9:00 - 18:00", "follow": "Follow Us" }
   },
   "footer": {
     "desc": "QINGLING AI is committed to enterprise large model inference optimization and AI agent development.",
