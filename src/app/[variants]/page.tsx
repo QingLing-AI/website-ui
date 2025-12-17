@@ -1,5 +1,5 @@
 import { DynamicLayoutProps } from '@/types/next';
-import { RouteVariants } from '@/utils/server/routeVariants';
+// import { RouteVariants } from '@/utils/server/routeVariants';
 
 
 import Navbar from './components/Navbar';
@@ -15,11 +15,11 @@ import BackToTop from './components/BackToTop';
 
 export default async (props: DynamicLayoutProps) => {
   // Get isMobile from variants parameter on server side
-  const isMobile = await RouteVariants.getIsMobile(props);
-  const { locale } = await RouteVariants.getVariantsFromProps(props);
+//   const isMobile = await RouteVariants.getIsMobile(props);
+//   const { locale } = await RouteVariants.getVariantsFromProps(props);
 
-  console.log('isMobile', isMobile)
-  console.log('locale', locale)
+//   console.log('isMobile', isMobile)
+//   console.log('locale', locale)
   return (
     <div className="font-sans antialiased text-gray-800">
     <Navbar />

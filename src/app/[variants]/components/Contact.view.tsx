@@ -7,7 +7,6 @@ const Contact = ({contactData}: any) => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(contactData)
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
