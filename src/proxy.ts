@@ -124,24 +124,15 @@ const defaultMiddleware = (request: NextRequest) => {
 
   // If locale explicitly provided via query (?hl=), persist it in cookie when user has no prior preference
   if (explicitlyLocale) {
-    const existingLocale = request.cookies.get(LOCALE_COOKIE)?.value as Locales | undefined;
-    if (!existingLocale) {
-      rewrite.cookies.set(LOCALE_COOKIE, explicitlyLocale, {
+    rewrite.cookies.set(LOCALE_COOKIE, explicitlyLocale, {
         // 90 days is a balanced persistence for locale preference
         maxAge: 60 * 60 * 24 * 90,
 
         path: '/',
         sameSite: 'lax',
         secure: process.env.NODE_ENV === 'production',
-      });
-      logDefault('Persisted explicit locale to cookie (no prior cookie): %s', explicitlyLocale);
-    } else {
-      logDefault(
-        'Locale cookie exists (%s), skip overwrite with %s',
-        existingLocale,
-        explicitlyLocale,
-      );
-    }
+    });
+    logDefault('Persisted explicit locale to cookie (no prior cookie): %s', explicitlyLocale);
   }
 
   return rewrite;

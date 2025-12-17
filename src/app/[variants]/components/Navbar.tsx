@@ -26,9 +26,13 @@ const Navbar: React.FC = () => {
   };
 
   const changeLanguage = (lang: Locales) => {
-    i18n.changeLanguage(lang)
+    // i18n.changeLanguage(lang)
     setIsDesktopDropdownOpen(false);
     setIsMobileDropdownOpen(false);
+
+    const url = new URL(location.href);
+    url.searchParams.set("hl", lang);
+    location.replace(url.toString());
   };
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

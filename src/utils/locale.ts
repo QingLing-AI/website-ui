@@ -1,6 +1,7 @@
 import { resolveAcceptLanguage } from 'resolve-accept-language';
+import { cookies, headers } from 'next/headers';
 
-import { DEFAULT_LANG } from '@/const/locale';
+import { DEFAULT_LANG, LOCALE_COOKIE } from '@/const/locale';
 import { Locales, locales, normalizeLocale } from '@/locales/resources';
 
 import { RouteVariants } from './server/routeVariants';
@@ -46,3 +47,9 @@ export const parsePageLocale = async (props: {
   const browserLocale = await RouteVariants.getLocale(props);
   return normalizeLocale(searchParams?.hl || browserLocale) as Locales;
 };
+
+export const getLocaleFromCookie = async () => {
+  return (await cookies()).get(LOCALE_COOKIE)?.value ??
+        (await headers()).get('accept-language')?.split(',')[0] ??
+        DEFAULT_LANG;
+}
