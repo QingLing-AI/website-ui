@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "contact": "Contact",
+    "consult": "Free Consultation"
+  },
+  "hero": {
+    "title1": "Enterprise LLM Inference",
+    "title2": "Optimization Experts",
+    "subtitle": "QINGLING AI is dedicated to helping enterprises build high-performance AI infrastructure, offering comprehensive solutions from AI agent development to large model inference optimization.",
+    "btnService": "Our Services",
+    "btnContact": "Contact Us"
+  },
+  "about": {
+    "title": "About QINGLING AI",
+    "description": "Founded by a team of PhDs in Digital Economy and Governance from Lingnan University, Hong Kong, QINGLING AI focuses on enterprise-grade large model inference optimization and AI agent development.",
+    "subtitle": "Our Advantages",
+    "subDesc": "Our core technical team has served in world-class cloud computing and AI enterprises, possessing rich industrial experience and technical accumulation.",
+    "features": {
+      "team": {
+        "title": "Expert Technical Team",
+        "desc": "Led by a PhD team, gathering multiple AI experts with deep technical accumulation."
+      },
+      "perf": {
+        "title": "Performance Optimization",
+        "desc": "Unique technology in large model inference optimization, significantly improving enterprise AI system efficiency."
+      },
+      "coop": {
+        "title": "Deep Industry Cooperation",
+        "desc": "Established strategic partnerships with leading enterprises to provide customized AI solutions."
+      }
+    }
+  },
+  "services": {
+    "title": "Core Business",
+    "subtitle": "We provide comprehensive enterprise-grade AI solutions to help companies quickly build efficient AI systems.",
+    "s1": {
+      "title": "Inference Optimization",
+      "desc": "We optimize inference performance for LLMs and multimodal models, helping enterprises maximize benefits with limited computing power.",
+      "f1": "Reduce Inference Latency",
+      "f2": "Increase Throughput",
+      "f3": "Reduce Operational Costs"
+    },
+    "s2": {
+      "title": "AI Agent Development",
+      "desc": "Custom development of enterprise AI agents, providing personalized solutions based on specific scenarios.",
+      "f1": "Smart Customer Service",
+      "f2": "Content Generation Agents",
+      "f3": "Data Analysis Agents"
+    },
+    "s3": {
+      "title": "Infrastructure Consulting",
+      "desc": "Providing AI infrastructure consulting services, including hardware selection, environment setup, and optimization plans.",
+      "f1": "Compute Resource Planning",
+      "f2": "System Architecture Design",
+      "f3": "Deployment & Support"
+    }
+  },
+  "team": {
+    "title": "Core Team",
+    "subtitle": "Our team consists of professionals from top universities and enterprises with rich industry experience.",
+    "m1": {
+      "name": "Dr. Yuan",
+      "role": "CEO / Founder",
+      "desc": "PhD in Digital Economy, Lingnan University. Former employee of international cloud computing giants with years of AI R&D experience."
+    },
+    "m2": {
+      "name": "Dr. Wang",
+      "role": "CTO",
+      "desc": "Former technical lead at an international AI company, specializing in large model performance optimization with multiple patents."
+    },
+    "m3": {
+      "name": "Dr. Zhang",
+      "role": "R&D Director",
+      "desc": "PhD in AI, participated in multiple national-level AI projects, extensive experience in agent development."
+    }
+  },
+  "testimonials": {
+    "title": "Client Feedback",
+    "subtitle": "Hear what our clients say about our services",
+    "t1": {
+      "content": "QINGLING AI's optimization solution helped us reduce inference costs by 60% while improving system response speed. Their professional knowledge is impressive.",
+      "author": "Director Chen",
+      "role": "AI Dept, Tech Company"
+    },
+    "t2": {
+      "content": "The customer service agent developed with QINGLING AI perfectly fits our business needs. Speed and accuracy exceeded expectations.",
+      "author": "Manager Lin",
+      "role": "E-commerce Platform"
+    },
+    "t3": {
+      "content": "The team gave us valuable advice on AI infrastructure, helping us avoid common mistakes and saving time and money. Highly trustworthy.",
+      "author": "Engineer Zhao",
+      "role": "Fintech Company"
+    }
+  },
+  "cta": {
+    "title": "Ready to elevate your AI capabilities?",
+    "subtitle": "Whether you want to optimize existing systems or build AI capabilities from scratch, we offer professional technical support.",
+    "btn": "Contact Us Now"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Feel free to reach out to us for any questions or needs",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "msg": "Message",
+      "btn": "Submit",
+      "submitting": "Submitting..."
+    },
+    "info": {
+      "title": "Contact Info",
+      "addrTitle": "Address",
+      "addr": "Room 5 Flat D, 10/F, Mai Tak Ind Bldg, 221 Wai Yip Street, Kwun Tong, Kowloon",
+      "phoneTitle": "Phone",
+      "emailTitle": "Email",
+      "hoursTitle": "Working Hours",
+      "hours": "Mon-Fri: 9:00 - 18:00",
+      "follow": "Follow Us"
+    }
+  },
+  "footer": {
+    "desc": "QINGLING AI is committed to enterprise large model inference optimization and AI agent development.",
+    "links": "Quick Links",
+    "services": "Services",
+    "contact": "Contact",
+    "copyright": "© 2025 QINGLING AI (Shenzhen) Co., Ltd. All rights reserved."
+  }
+}
