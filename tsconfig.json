@@ -24,9 +24,10 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./app/*"
-      ]
+      "@/const/*": ["./packages/const/src/*", "./src/const/*"],
+      "@/utils/*": ["./packages/utils/src/*", "./src/utils/*"],
+      "@/types/*": ["./packages/types/src/*", "./src/types/*"],
+      "@/*": ["./src/*"],
     },
     "allowImportingTsExtensions": true,
     "noEmit": true,

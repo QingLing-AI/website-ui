@@ -49,6 +49,9 @@ ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# Make the middleware rewrite through local as default
+ENV MIDDLEWARE_REWRITE_THROUGH_LOCAL="1"
+
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
