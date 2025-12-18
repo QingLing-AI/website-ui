@@ -14,8 +14,8 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
   return (
     <footer className="bg-gray-800 text-white pt-12 pb-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between mb-8">
-          <div className="mb-8 md:mb-0">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-1 mb-8">
+          <div className="md:col-span-2 mb-8 md:mb-0">
             <div className="h-12 mb-4">
               <Image width={48} height={48} className='bg-white'
                 src={logo_dark || "/logo-dark.png"}
@@ -34,10 +34,10 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="md:col-span-3 grid grid-cols-3 gap-8">
             <div>
               <h4 className="text-lg font-semibold mb-4">{t('footer.links')}</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm">
                 {['home', 'about', 'services', 'team', 'contact'].map((link) => (
                   <li key={link}>
                     <a href={`#${link}`} className="text-gray-400 hover:text-primary transition-colors">
