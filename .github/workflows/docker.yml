@@ -13,7 +13,7 @@ concurrency:
 
 env:
   PLATFORM_PAIR:
-  REGISTRY_IMAGE: ${{ github.repository}}:${{ github.ref_name }}
+  REGISTRY_IMAGE: ${{ vars.DOCKER_REGISTRY_IMAGE }}:${{ github.ref_name }}
 
 jobs:
   build:
