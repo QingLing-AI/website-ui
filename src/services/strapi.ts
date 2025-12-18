@@ -11,7 +11,10 @@ export async function getContactData() {
 }
 export async function getLogo() {
   const client = new StrapiClient();
-  const { data } = await client.findSingle('logo', {populate:{light:true, dark:true}})
-
-  return {light: client.baseURL + data.light.url, dark: client.baseURL + data.dark.url}
+  try {
+    const { data } = await client.findSingle('logo', {populate:{light:true, dark:true}})
+    return {light: client.baseURL + data.light.url, dark: client.baseURL + data.dark.url}
+  } catch (error) {
+    return {}
+  }
 }

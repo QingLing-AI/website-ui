@@ -34,6 +34,7 @@ export class StrapiClient {
         return locale
     }
   }
+
   async findSingle(resource: string, options?: API.BaseQueryParams) {
     if (options?.locale) {
       options.locale = this.fixupLocale(options.locale)
