@@ -125,7 +125,7 @@ export default {
     info: {
       title: "联系方式",
       addrTitle: "公司地址",
-      addr: "深圳市龙华区深圳北站社区汇德大厦1号楼13楼",
+      addr: "香港观塘伟业街221号美德工业大厦D座10楼D5室",
       phoneTitle: "联系电话",
       emailTitle: "电子邮箱",
       hoursTitle: "工作时间",
