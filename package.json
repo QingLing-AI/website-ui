@@ -42,6 +42,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/typography": "^0.5.19",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.0",
     "@types/debug": "^4.1.12",
     "@types/lodash": "^4.17.21",
     "@types/lodash-es": "^4.17.12",
@@ -58,6 +59,9 @@
     "lodash-es": "^4.17.22",
     "postcss": "^8.5.2",
     "prettier": "^3.7.4",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-packagejson": "^2.5.20",
+    "prettier-plugin-sort-json": "^4.1.1",
     "tailwindcss": "~4.1.0",
     "tsx": "^4.20.6",
     "typescript": "~5.8.2"

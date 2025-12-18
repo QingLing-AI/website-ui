@@ -1,9 +1,4 @@
 {
-  "form": {
-    "submitError": "提交失败，请稍后重试。",
-    "networkError": "网络错误，请稍后重试。",
-    "successMessage": "感谢您的留言！我们会尽快与您联系。"
-  },
   "api": {
     "contact": {
       "missingFields": "缺少必需字段：姓名、邮箱和内容为必填项",
@@ -17,6 +12,11 @@
     "timeout": "请求超时",
     "serverError": "服务器错误",
     "clientError": "客户端错误"
+  },
+  "form": {
+    "submitError": "提交失败，请稍后重试。",
+    "networkError": "网络错误，请稍后重试。",
+    "successMessage": "感谢您的留言！我们会尽快与您联系。"
   },
   "validation": {
     "required": "此字段为必填项",

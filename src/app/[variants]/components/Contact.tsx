@@ -117,7 +117,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.phoneTitle')}</h4>
-                    <p className="text-gray-600">{t('contact.form.phone')}</p>
+                    <p className="text-gray-600">0755-86266509</p>
                   </div>
                 </div>
 
@@ -129,7 +129,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.emailTitle')}</h4>
-                    <p className="text-gray-600">{t("contact.form.email")}</p>
+                    <p className="text-gray-600">kf@qingling-ai.com</p>
                   </div>
                 </div>
 
