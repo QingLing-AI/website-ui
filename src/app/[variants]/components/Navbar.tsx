@@ -9,7 +9,7 @@ import { NAV_ITEMS } from '../constants';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
-  // const { currentLanguage, changeLanguage: changeLang, getI18nDisplayName } = useLanguage();
+
   const currentLanguage = i18n.language as Locales;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +36,9 @@ const Navbar: React.FC = () => {
   };
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('http')) {
+      return true
+    }
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
@@ -64,7 +67,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
           {NAV_ITEMS.map((item) => (
-            <a 
+            <a
               key={item.label}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
@@ -73,7 +76,7 @@ const Navbar: React.FC = () => {
               {t(item.label)}
             </a>
           ))}
-          
+
           <div className="relative">
             <button
               onClick={() => setIsDesktopDropdownOpen(!isDesktopDropdownOpen)}
@@ -102,7 +105,7 @@ const Navbar: React.FC = () => {
             )}
           </div>
 
-          <a 
+          <a
             href="#contact"
             onClick={(e) => scrollToSection(e, '#contact')}
             className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full font-medium shadow-lg transition-all transform hover:scale-105"
@@ -138,8 +141,8 @@ const Navbar: React.FC = () => {
               </div>
             )}
           </div>
-          <button 
-            onClick={toggleMenu} 
+          <button
+            onClick={toggleMenu}
             className="text-gray-600 focus:outline-none"
             aria-label="Toggle menu"
           >
@@ -152,7 +155,7 @@ const Navbar: React.FC = () => {
       <div className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="container mx-auto px-4 py-3 flex flex-col space-y-4">
           {NAV_ITEMS.map((item) => (
-            <a 
+            <a
               key={item.label}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
@@ -161,7 +164,7 @@ const Navbar: React.FC = () => {
               {t(item.label)}
             </a>
           ))}
-          <a 
+          <a
             href="#contact"
             onClick={(e) => scrollToSection(e, '#contact')}
             className="bg-primary text-white px-6 py-2 rounded-full font-medium shadow-lg text-center mt-2"

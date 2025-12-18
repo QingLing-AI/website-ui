@@ -2,6 +2,7 @@ export default {
   nav: {
     home: "首页",
     about: "关于我们",
+    news: "流动新闻",
     services: "核心业务",
     team: "团队介绍",
     contact: "联系我们",
