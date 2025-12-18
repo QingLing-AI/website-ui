@@ -1,10 +1,7 @@
 version: '3.8'
 
 services:
-  website-ui:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+  webui:
     image: crpi-7x3cvpk5cndgayp8.cn-shenzhen.personal.cr.aliyuncs.com/qingling-ai/website:latest
     ports:
       - "3000:3000"
@@ -21,9 +18,12 @@ services:
       # Next.js 相关配置
       - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
     restart: unless-stopped
+    env_file: .env.webui
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (res) => {process.exit(res.statusCode === 200 ? 0 : 1)});"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
