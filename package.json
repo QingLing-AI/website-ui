@@ -9,7 +9,7 @@
     "build:docker": "DOCKER=true next build",
     "start": "next start",
     "lint": "next lint",
-    "i18n-local": "npm run workflow:i18n bun run --env-file=.env.local lobe-i18n && npm run i18n-prettier",
+    "i18n-local": "bun run --env-file=.env.local lobe-i18n && npm run i18n-prettier",
     "i18n": "npm run workflow:i18n && lobe-i18n && npm run i18n-prettier",
     "i18n-prettier": "prettier -c --write \"locales/**\"",
     "workflow:i18n": "tsx ./scripts/i18nWorkflow/index.ts"
@@ -42,6 +42,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/typography": "^0.5.19",
+    "@types/debug": "^4.1.12",
     "@types/lodash": "^4.17.21",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.19.1",

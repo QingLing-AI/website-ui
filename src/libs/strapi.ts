@@ -1,31 +1,28 @@
-import 'server-only';
-
-import type { StrapiClient as _StrapiClient } from '@strapi/client';
+import type { StrapiClient as _StrapiClient, API } from '@strapi/client';
 import { strapi } from '@strapi/client';
 
-function createClient(): _StrapiClient {
-  const {STRAPI_BASE_URL, STRAPI_AUTH_TOKEN} = process.env;
+const {STRAPI_BASE_URL, STRAPI_AUTH_TOKEN} = process.env;
 
-  if (!STRAPI_BASE_URL) {
-    throw new Error('STRAPI_BASE_URL not found. Please set STRAPI_BASE_URL in .env');
-  }
-
-  if (!STRAPI_AUTH_TOKEN) {
-    throw new Error('STRAPI_AUTH_TOKEN not found. Please set STRAPI_AUTH_TOKEN in .env');
-  }
-
-  return strapi({ baseURL: STRAPI_BASE_URL, auth: STRAPI_AUTH_TOKEN });
+if (!STRAPI_BASE_URL) {
+  throw new Error('STRAPI_BASE_URL not found. Please set STRAPI_BASE_URL in .env');
 }
 
+if (!STRAPI_AUTH_TOKEN) {
+  throw new Error('STRAPI_AUTH_TOKEN not found. Please set STRAPI_AUTH_TOKEN in .env');
+}
 
 export class StrapiClient {
 
+  baseURL: string;
   private client: _StrapiClient;
   constructor() {
-    this.client = createClient();
+    this.baseURL = STRAPI_BASE_URL!.replace(/\/$/, '');
+
+    const apiBase = this.baseURL + '/api';
+    this.client = strapi({ baseURL: apiBase, auth: STRAPI_AUTH_TOKEN });
   }
 
-  private fixLocale(locale: string) {
+  private fixupLocale(locale: string) {
     switch (locale) {
       case 'en':
         return 'en-US'
@@ -37,10 +34,10 @@ export class StrapiClient {
         return locale
     }
   }
-  async findSingle(resource: string, locale?: string) {
-    const data = await this.client.single(resource).find({
-      locale: this.fixLocale(locale),
-    });
-    return data;
+  async findSingle(resource: string, options?: API.BaseQueryParams) {
+    if (options?.locale) {
+      options.locale = this.fixupLocale(options.locale)
+    }
+    return await this.client.single(resource).find(options);
   }
 }

@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Contact = ({contactData}: any) => {
+const Contact = () => {
+
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,14 +33,14 @@ const Contact = ({contactData}: any) => {
       });
 
       if (response.ok) {
-        alert(t('感谢您的留言！我们会尽快与您联系。'));
+        alert(t('error:form.successMessage'));
         form.reset();
       } else {
-        alert(t('提交失败，请稍后重试。'));
+        alert(t('error:form.submitError'));
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert(t('网络错误，请稍后重试。'));
+      alert(t('error:form.networkError'));
     } finally {
       setIsLoading(false);
     }
@@ -104,7 +105,7 @@ const Contact = ({contactData}: any) => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.addrTitle')}</h4>
-                    <p className="text-gray-600">{contactData.address}</p>
+                    <p className="text-gray-600">{t('contact.info.addr')}</p>
                   </div>
                 </div>
 
@@ -116,7 +117,7 @@ const Contact = ({contactData}: any) => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.phoneTitle')}</h4>
-                    <p className="text-gray-600">{contactData.phone}</p>
+                    <p className="text-gray-600">{t('contact.form.phone')}</p>
                   </div>
                 </div>
 
@@ -128,7 +129,7 @@ const Contact = ({contactData}: any) => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.emailTitle')}</h4>
-                    <p className="text-gray-600">{contactData.email}</p>
+                    <p className="text-gray-600">{t("contact.form.email")}</p>
                   </div>
                 </div>
 
@@ -140,7 +141,7 @@ const Contact = ({contactData}: any) => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.hoursTitle')}</h4>
-                    <p className="text-gray-600">{contactData.work_time}</p>
+                    <p className="text-gray-600">{t("contact.info.hours")}</p>
                   </div>
                 </div>
               </div>

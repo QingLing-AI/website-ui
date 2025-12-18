@@ -8,12 +8,11 @@ import About from './components/About';
 import Services from './components/Services';
 import Team from './components/Team';
 import Testimonials from './components/Testimonials';
-import Contact from './components/Contact.server';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 
-
-export default async (props: DynamicLayoutProps) => {
+const Page = async (props: DynamicLayoutProps) => {
   // Get isMobile from variants parameter on server side
 //   const isMobile = await RouteVariants.getIsMobile(props);
 //   const { locale } = await RouteVariants.getVariantsFromProps(props);
@@ -35,3 +34,5 @@ export default async (props: DynamicLayoutProps) => {
     </div>
   );
 }
+
+export default Page;

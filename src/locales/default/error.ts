@@ -1,1 +1,34 @@
-export default {}
+export default {
+  // 表单提交相关错误
+  form: {
+    submitError: "提交失败，请稍后重试。",
+    networkError: "网络错误，请稍后重试。",
+    successMessage: "感谢您的留言！我们会尽快与您联系。",
+  },
+
+  // API 错误消息
+  api: {
+    contact: {
+      missingFields: "缺少必需字段：姓名、邮箱和内容为必填项",
+      invalidEmail: "邮箱格式无效",
+      sendNotificationFailed: "发送邮件通知失败",
+      processFailed: "处理联系表单失败",
+    }
+  },
+
+  // 通用错误
+  common: {
+    unknownError: "未知错误",
+    timeout: "请求超时",
+    serverError: "服务器错误",
+    clientError: "客户端错误",
+  },
+
+  // 验证错误
+  validation: {
+    required: "此字段为必填项",
+    invalidFormat: "格式不正确",
+    minLength: "长度不能少于 {{min}} 个字符",
+    maxLength: "长度不能超过 {{max}} 个字符",
+  }
+};
