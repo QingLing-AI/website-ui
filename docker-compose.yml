@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   webui:
-    image: crpi-7x3cvpk5cndgayp8.cn-shenzhen.personal.cr.aliyuncs.com/qingling-ai/website:latest
+    image: crpi-7x3cvpk5cndgayp8.cn-shenzhen.personal.cr.aliyuncs.com/qingling-ai/website:hk
     ports:
       - "3000:3000"
     environment:
