@@ -88,3 +88,75 @@ import Image from 'next/image';
   className="your-css-classes"
 />
 ```
+
+## Module Data Flow Rules
+
+The application follows a specific pattern for data flow between components and services, particularly for content fetched from Strapi CMS. Here are the established patterns:
+
+### 1. Service Layer Pattern (`src/services/strapi.ts`)
+
+- **Purpose**: Centralized data fetching functions from Strapi CMS
+- **Pattern**: Each function follows the format `async function getDataName()`
+- **Implementation**: Uses StrapiClient to fetch data with proper error handling
+- **Return Format**: Transforms Strapi response to frontend-friendly format
+- **Error Handling**: Graceful fallbacks with empty objects/arrays when Strapi is unavailable
+- **Example**:
+
+  ```typescript
+  export async function getLogo() {
+    const client = new StrapiClient();
+    try {
+      const { data } = await client.findSingle('logo', {populate:{light:true, dark:true}})
+      return {light: client.baseURL + data.light.url, dark: client.baseURL + data.dark.url}
+    } catch (error) {
+      return {}
+    }
+  }
+  ```
+
+### 2. Server Component Pattern (`Footer.tsx`)
+
+- **Purpose**: Fetch data on the server side and pass to client components
+- **Pattern**: Component is declared as `async` and calls data fetching functions
+- **Implementation**: Imports service functions and awaits data retrieval
+- **Data Passing**: Transforms and passes data as props to client view components
+- **Example**:
+
+  ```typescript
+  const Footer: React.FC = async () => {
+    const { dark } = await strapi.getLogo()
+    return <FooterView logo_dark={dark} />
+  }
+  ```
+
+### 3. Client View Component Pattern (`Footer.view.tsx`)
+
+- **Purpose**: Presentational components that receive data as props
+- **Pattern**: Marked with `'use client'` directive for client-side rendering
+- **Implementation**: Receives transformed data as props from server components
+- **Usage**: Renders UI elements using the passed data and other client-side features
+- **Example**:
+
+  ```typescript
+  interface FooterProps {
+    logo_dark?: string;
+  }
+  const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
+    return (
+      <Image src={logo_dark || "/logo-dark.png"} alt="Qingling Logo" />
+    );
+  }
+  ```
+
+### 4. Data Transformation and Error Handling
+
+- **Base URL Concatenation**: Service functions append `client.baseURL` to image URLs
+- **Population Strategy**: Use populate options in `findSingle` calls for related content
+- **Fallback Mechanisms**: Provide default values when Strapi requests fail
+- **Type Safety**: Define proper TypeScript interfaces for data structures
+
+### 5. Component Separation Principle
+
+- **Server Components**: Handle data fetching and pass transformed data to client components
+- **Client Components**: Focus on UI rendering and client-side interactions
+- **Separation of Concerns**: Service layer handles API communication, components handle presentation

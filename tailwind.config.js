@@ -7,6 +7,7 @@ const config = {
   theme: {
   },
   plugins: [
+    require("@tailwindcss/typography")
   ],
 };
 

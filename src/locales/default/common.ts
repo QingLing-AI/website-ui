@@ -140,4 +140,7 @@ export default {
     contact: "联系方式",
     copyright: "© 2025 清岭科技（深圳）有限公司. 保留所有权利.",
   },
+  news: {
+    "no_articles": "没有文章"
+  }
 };

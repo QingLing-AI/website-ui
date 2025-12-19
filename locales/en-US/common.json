@@ -69,6 +69,9 @@
     "services": "Services",
     "team": "Team"
   },
+  "news": {
+    "no_articles": "No articles found"
+  },
   "services": {
     "s1": {
       "desc": "We optimize inference performance for LLMs and multimodal models, helping enterprises maximize benefits with limited computing power.",

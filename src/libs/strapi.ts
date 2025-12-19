@@ -43,4 +43,12 @@ export class StrapiClient {
     }
     return await this.client.single(resource).find(options);
   }
+
+  async findCollection(collection: string, options?: API.BaseQueryParams) {
+    return await this.client.collection(collection).find(options);
+  }
+
+  async findOne(collection: string, id: string | number, options?: API.BaseQueryParams) {
+    return await this.client.collection(collection).findOne(`${id}`, options);
+  }
 }
