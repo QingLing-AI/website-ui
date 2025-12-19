@@ -32,3 +32,4 @@ out
 
 # agent files
 /.claude
+.mcp.json

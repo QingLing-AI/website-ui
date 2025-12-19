@@ -15,9 +15,13 @@ import { RouteVariants } from './utils/server/routeVariants';
 const logDefault = debug('middleware:default');
 
 export const config = {
-  matcher: [
+  matcher: [// Skip all internal paths (_next)
+    '/((?!_next).*)',
     // include any files in the api or trpc folders that might have an extension
     '/(api|trpc|webapi)(.*)',
+    // include the page route
+    '/news',
+    '/news/(.*)',
     // include the /
     '/',
   ],

@@ -1,10 +1,12 @@
 import { resolveAcceptLanguage } from 'resolve-accept-language';
-import { cookies, headers } from 'next/headers';
 
 import { DEFAULT_LANG, LOCALE_COOKIE } from '@/const/locale';
 import { Locales, locales, normalizeLocale } from '@/locales/resources';
 
 import { RouteVariants } from './server/routeVariants';
+
+// Check if we're in a server environment
+const isServer = typeof window === 'undefined';
 
 /**
  * Parse the browser language and return the fallback language
@@ -49,7 +51,30 @@ export const parsePageLocale = async (props: {
 };
 
 export const getLocaleFromCookie = async () => {
-  return (await cookies()).get(LOCALE_COOKIE)?.value ??
-        (await headers()).get('accept-language')?.split(',')[0] ??
-        DEFAULT_LANG;
+  if (isServer) {
+    // Server-side implementation
+    const { cookies, headers } = await import('next/headers');
+    return (await cookies()).get(LOCALE_COOKIE)?.value ??
+          (await headers()).get('accept-language')?.split(',')[0] ??
+          DEFAULT_LANG;
+  } else {
+    // Client-side implementation - try to get locale from localStorage or URL
+    if (typeof window !== 'undefined') {
+      // Try to get from localStorage
+      const storedLocale = localStorage.getItem(LOCALE_COOKIE);
+      if (storedLocale) {
+        return storedLocale;
+      }
+
+      // Try to get from URL query params
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLocale = urlParams.get('hl');
+      if (urlLocale) {
+        return urlLocale;
+      }
+    }
+
+    // Fallback to browser language
+    return navigator.language || DEFAULT_LANG;
+  }
 }

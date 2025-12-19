@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
   };
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('http')) {
+    if (!href.startsWith('#')) {
       return true
     }
     e.preventDefault();
@@ -73,6 +73,7 @@ const Navbar: React.FC = () => {
               onClick={(e) => scrollToSection(e, item.href)}
               className="text-gray-600 hover:text-primary font-medium transition duration-300"
             >
+              {/* @ts-ignore */}
               {t(item.label)}
             </a>
           ))}
@@ -161,6 +162,7 @@ const Navbar: React.FC = () => {
               onClick={(e) => scrollToSection(e, item.href)}
               className="text-gray-600 hover:text-primary font-medium py-2 transition duration-300 border-b border-gray-100 last:border-0"
             >
+              {/* @ts-ignore */}
               {t(item.label)}
             </a>
           ))}
