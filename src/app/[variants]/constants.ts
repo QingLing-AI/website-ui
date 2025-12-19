@@ -3,7 +3,7 @@ import type { NavItem, TeamMember, ServiceItem, TestimonialItem, ContactInfo } f
 export const NAV_ITEMS: NavItem[] = [
   { label: 'nav.home', href: '#home' },
   { label: 'nav.about', href: '#about' },
-  { label: 'nav.news', href: 'https://hkiodeg.blogspot.com' },
+  { label: 'nav.news', href: '/news' },
   { label: 'nav.services', href: '#services' },
   { label: 'nav.team', href: '#team' },
   { label: 'nav.contact', href: '#contact' },
