@@ -10,6 +10,14 @@
     --color-primary-pale: #E8F5E9;
 
     --font-sans: "Inter", system-ui, sans-serif;
+    --font-serif: "Merriweather", serif;
+
+    --color-brand-50: var(--color-primary-pale);
+    --color-brand-100: var(--color-primary-light);
+    --color-brand-500: var(--color-primary);
+    --color-brand-600: var(--color-primary-dark);
+    --color-brand-700: var(--color-primary-dark);
+    --color-brand-900: var(--color-primary-dark);
   }
 }
 

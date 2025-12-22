@@ -1,4 +1,5 @@
 import { DEFAULT_LANG } from '@/const/locale';
+
 import resources from './default';
 
 export const all_locales = [
@@ -15,6 +16,7 @@ export const all_locales = [
   'tr-TR',
   'zh-CN',
   'zh-TW',
+  'zh-HK',
   'vi-VN',
   'fa-IR',
   'it-IT',
@@ -22,11 +24,7 @@ export const all_locales = [
   'nl-NL',
 ] as const;
 
-export const locales = [
-  'en-US',
-  'zh-CN',
-  'zh-TW',
-] as const;
+export const locales = ['en-US', 'zh-CN', 'zh-HK'] as const;
 
 export type DefaultResources = typeof resources;
 export type NS = keyof DefaultResources;
@@ -62,7 +60,7 @@ export const localeOptions: LocaleOptions = [
   },
   {
     label: '繁體中文',
-    value: 'zh-TW',
+    value: 'zh-HK',
   },
 ] as LocaleOptions;
 

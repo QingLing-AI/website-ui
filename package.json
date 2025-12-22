@@ -1,17 +1,17 @@
 {
   "name": "qingling-ai",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev -p 3000",
     "build": "next build",
     "build:docker": "DOCKER=true next build",
-    "start": "next start",
-    "lint": "next lint",
-    "i18n-local": "bun run --env-file=.env.local lobe-i18n && npm run i18n-prettier",
+    "dev": "next dev -p 3000",
     "i18n": "npm run workflow:i18n && lobe-i18n && npm run i18n-prettier",
+    "i18n-local": "bun run --env-file=.env.local lobe-i18n && npm run i18n-prettier",
     "i18n-prettier": "prettier -c --write \"locales/**\"",
+    "lint": "next lint",
+    "start": "next start",
     "workflow:i18n": "tsx ./scripts/i18nWorkflow/index.ts"
   },
   "dependencies": {
@@ -25,7 +25,9 @@
     "i18next": "^25.7.2",
     "i18next-browser-languagedetector": "^8.2.0",
     "i18next-resources-to-backend": "^1.2.1",
+    "lucide-react": "^0.562.0",
     "next": "16.0.10",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^7.0.11",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
