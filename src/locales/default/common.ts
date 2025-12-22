@@ -1,6 +1,3 @@
-import { read } from 'fs';
-import { last } from 'lodash';
-
 export default {
   nav: {
     home: '首页',
