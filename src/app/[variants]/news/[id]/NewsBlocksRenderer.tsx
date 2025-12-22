@@ -71,9 +71,11 @@ const ArticleBlocksRenderer: React.FC<ArticleBlocksRendererProps> = ({ blocks })
                   <Image
                     src={imageUrl}
                     alt={file.alternativeText || file.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    // fill
+                    // className="object-cover"
+                    width={width}
+                    height={height}
+                    // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
               );
@@ -120,11 +122,11 @@ const ArticleBlocksRenderer: React.FC<ArticleBlocksRendererProps> = ({ blocks })
 
   return (
     <div className="article-content">
-      {blocks.map((block) => {
+      {blocks.map((block, index) => {
         switch (block.__component) {
           case 'shared.rich-text':
             return (
-              <div key={block.id} className="mb-6 prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <div key={index} className="mb-6 prose prose-lg max-w-none text-gray-700 leading-relaxed">
                 <ReactMarkdown
                   components={{
                     // Custom rendering for images in markdown to use Next.js Image
@@ -140,6 +142,10 @@ const ArticleBlocksRenderer: React.FC<ArticleBlocksRendererProps> = ({ blocks })
                           alt={props.alt || 'Article image'}
                           width={600}
                           height={400}
+                          style={{
+                            width: '100%',    // 响应式宽度
+                            height: 'auto',   // 高度自动按比例
+                          }}
                           className="my-4 rounded-lg"
                         />
                       );
@@ -163,7 +169,7 @@ const ArticleBlocksRenderer: React.FC<ArticleBlocksRendererProps> = ({ blocks })
           case 'shared.quote':
             return (
               <div
-                key={block.id}
+                key={index}
                 className="my-8 p-6 bg-gray-50 border-l-4 border-primary italic"
               >
                 {block.title && (
@@ -174,7 +180,7 @@ const ArticleBlocksRenderer: React.FC<ArticleBlocksRendererProps> = ({ blocks })
             );
 
           case 'shared.slider':
-            return <Slider key={block.id} sliderBlock={block} />;
+            return <Slider key={index} sliderBlock={block} />;
 
           case 'shared.media':
             if (!block.file) {
@@ -189,7 +195,7 @@ const ArticleBlocksRenderer: React.FC<ArticleBlocksRendererProps> = ({ blocks })
 
             if (isVideo) {
               return (
-                <div key={block.id} className="my-8">
+                <div key={index} className="my-8">
                   <video
                     src={imageUrl}
                     controls
@@ -199,20 +205,21 @@ const ArticleBlocksRenderer: React.FC<ArticleBlocksRendererProps> = ({ blocks })
               );
             } else {
               return (
-                <div key={block.id} className="my-8">
-                  <div className="max-w-2xl mx-auto rounded-lg overflow-hidden">
+                <div key={index} className="my-8">
+                  <div className="flex justify-center max-w-2xl mx-auto rounded-lg overflow-hidden">
+                    {/* <div > */}
                     <Image
                       src={imageUrl}
                       alt={block.file.alternativeText || block.file.name}
                       width={width}
                       height={height}
-                      className="w-full object-cover"
                     />
-                    {block.file.caption && (
+                    {/* {block.file.caption && (
                       <div className="text-sm text-gray-500 text-center mt-2 p-2">
                         {block.file.caption}
                       </div>
                     )}
+                    </div> */}
                   </div>
                 </div>
               );

@@ -15,8 +15,11 @@ import { RouteVariants } from './utils/server/routeVariants';
 const logDefault = debug('middleware:default');
 
 export const config = {
-  matcher: [// Skip all internal paths (_next)
-    '/((?!_next).*)',
+  matcher: [
+    /**
+     * 匹配所有「非静态资源」路径
+     */
+    '/((?!_next|favicon.ico|logo.*).*)',
     // include any files in the api or trpc folders that might have an extension
     '/(api|trpc|webapi)(.*)',
     // include the page route
@@ -33,12 +36,6 @@ const defaultMiddleware = (request: NextRequest) => {
 
   const url = new URL(request.url);
   logDefault('Processing request: %s %s', request.method, request.url);
-
-  // skip all api requests
-  if (backendApiEndpoints.some((path) => url.pathname.startsWith(path))) {
-    logDefault('Skipping API request: %s', url.pathname);
-    return NextResponse.next();
-  }
 
   const theme = 'light';
 
@@ -60,15 +57,31 @@ const defaultMiddleware = (request: NextRequest) => {
   const ua = request.headers.get('user-agent');
 
   const device = new UAParser(ua || '').getDevice();
+  const deviceType = device.type || 'desktop';
 
   logDefault('User preferences: %O', {
     browserLanguage,
-    deviceType: device.type,
+    deviceType: deviceType,
     hasCookies: {
       locale: !!request.cookies.get(LOCALE_COOKIE)?.value,
     },
     locale,
   });
+
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-locale", locale);
+  // requestHeaders.set("x-theme", theme);
+  // requestHeaders.set("x-device-type", deviceType);
+
+  // skip all api requests
+  if (backendApiEndpoints.some((path) => url.pathname.startsWith(path))) {
+    logDefault('Skipping API request: %s', url.pathname);
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  }
 
   // 2. Create normalized preference values
   const route = RouteVariants.serializeVariants({
@@ -123,7 +136,7 @@ const defaultMiddleware = (request: NextRequest) => {
 
   logDefault('nextURL after rewrite: %s', url.toString());
   // build rewrite response first
-  const rewrite = NextResponse.rewrite(url, { status: 200 });
+  const rewrite = NextResponse.rewrite(url, { status: 200, headers: requestHeaders });
 
   // If locale explicitly provided via query (?hl=), persist it in cookie when user has no prior preference
   if (explicitlyLocale) {

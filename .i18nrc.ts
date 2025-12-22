@@ -4,10 +4,7 @@ export default defineConfig({
   entry: 'locales/zh-CN',
   entryLocale: 'zh-CN',
   output: 'locales',
-  outputLocales: [
-    'zh-TW',
-    'en-US',
-  ],
+  outputLocales: ['zh-HK', 'en-US'],
   temperature: 0,
   saveImmediately: true,
   // @ts-ignore

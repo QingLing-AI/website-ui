@@ -22,15 +22,23 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true, // Ensure URLs end with trailing slash
   images: {
-    unoptimized: true, // Since we're using output: 'export'
+    unoptimized: !isProd,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
       {
+        protocol: 'http',
+        hostname: 'host.docker.internal',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+      {
         protocol: 'https',
-        hostname: 'www.yanqueai.com',
+        hostname: '*.qingling-ai.*',
       },
     ],
   }
