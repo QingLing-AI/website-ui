@@ -19,6 +19,9 @@
     "subtitle": "我們的優勢",
     "title": "關於清岭科技"
   },
+  "categories": {
+    "title": "分類"
+  },
   "contact": {
     "form": {
       "btn": "提交資訊",
@@ -70,7 +73,15 @@
     "team": "團隊介紹"
   },
   "news": {
-    "no_articles": "沒有文章"
+    "backToNews": "返回",
+    "no_articles": "沒有文章",
+    "readMore": "阅读全文",
+    "title": "最新消息",
+    "titleDesc": "我們的研究成果、產品和公司公告的最新消息。"
+  },
+  "pagination": {
+    "next": "下一頁",
+    "prev": "上一頁"
   },
   "services": {
     "s1": {
@@ -96,6 +107,9 @@
     },
     "subtitle": "我們提供全方位的企業級AI解決方案，協助企業快速建構高效AI系統。",
     "title": "核心業務"
+  },
+  "tags": {
+    "title": "標籤"
   },
   "team": {
     "m1": {

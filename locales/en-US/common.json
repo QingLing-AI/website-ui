@@ -19,6 +19,9 @@
     "subtitle": "Our Advantages",
     "title": "About QINGLING AI"
   },
+  "categories": {
+    "title": "Categories"
+  },
   "contact": {
     "form": {
       "btn": "Submit",
@@ -70,7 +73,15 @@
     "team": "Team"
   },
   "news": {
-    "no_articles": "No articles found"
+    "backToNews": "Back to News",
+    "no_articles": "No articles found",
+    "readMore": "Read more",
+    "title": "Latest Updates",
+    "titleDesc": "Latest updates on our research, products, and company announcements."
+  },
+  "pagination": {
+    "next": "Next",
+    "prev": "Previous"
   },
   "services": {
     "s1": {
@@ -96,6 +107,9 @@
     },
     "subtitle": "We provide comprehensive enterprise-grade AI solutions to help companies quickly build efficient AI systems.",
     "title": "Core Business"
+  },
+  "tags": {
+    "title": "Tag"
   },
   "team": {
     "m1": {

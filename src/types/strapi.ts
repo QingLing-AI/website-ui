@@ -1,3 +1,7 @@
+import { API } from '@strapi/client';
+
+export type Pagination = API.Pagination;
+
 // Define TypeScript interfaces for the blocks
 export interface RichTextBlock {
   __component: 'shared.rich-text';
@@ -67,9 +71,21 @@ export interface MediaBlock {
 // 文章类型
 export type ArticleBlock = RichTextBlock | QuoteBlock | SliderBlock | MediaBlock;
 
-export interface Article {
+export interface Category extends API.Document {
+  name: string;
+  slug?: string;
+  description?: string;
+}
+
+export interface Tag extends API.Document {
   id: number;
   documentId: string;
+  name: string;
+  slug?: string;
+  description?: string;
+}
+
+export interface Article extends API.Document {
   title: string;
   description: string;
   slug: string;
@@ -86,6 +102,8 @@ export interface Article {
     publishedAt: string;
     avatar?: any;
   };
-  cover?: any;
+  category?: Category;
+  tags?: Tag[];
+  cover?: MediaFile;
   blocks?: ArticleBlock[];
 }

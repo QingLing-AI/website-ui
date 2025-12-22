@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { Locales, localeOptions } from '@/locales/resources';
 
-import { NAV_ITEMS } from '../constants';
+import { NavView, scrollToSection } from './Header.view';
 
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
 
   const currentLanguage = i18n.language as Locales;
@@ -35,48 +35,30 @@ const Navbar: React.FC = () => {
     location.replace(url.toString());
   };
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!href.startsWith('#')) {
-      return true
-    }
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      setIsOpen(false);
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="logo-link cursor-pointer">
-          <Image
-            src="https://www.yanqueai.com/vilook/imgtoimg/63/a2/fdf64c78cf6dfdf59d79f615cfd6693ddefc.png"
-            alt="Qingling Tech Logo"
-            width={48}
-            height={48}
-            className="h-12 w-auto"
-          />
-        </a>
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <div className="bg-brand-50 text-white rounded-lg">
+             <Image
+              src="/logo.png"
+              alt="Qingling Tech Logo"
+              width={48}
+              height={48}
+              className="h-12 w-auto"
+            />
+          </div>
+          <span className="text-2xl font-serif font-bold text-gray-900 tracking-tight">
+            Qingling <span className="text-brand-600">AI</span>
+          </span>
+        </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
-              className="text-gray-600 hover:text-primary font-medium transition duration-300"
-            >
-              {/* @ts-ignore */}
-              {t(item.label)}
-            </a>
-          ))}
+          <NavView
+            itemCls='text-gray-600 hover:text-primary transition duration-300'
+            onNavItemClick={()=>{setIsOpen(false)}} />
 
           <div className="relative">
             <button
@@ -153,19 +135,13 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-130 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="container mx-auto px-4 py-3 flex flex-col space-y-4">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
-              className="text-gray-600 hover:text-primary font-medium py-2 transition duration-300 border-b border-gray-100 last:border-0"
-            >
-              {/* @ts-ignore */}
-              {t(item.label)}
-            </a>
-          ))}
+
+          <NavView
+            itemCls="text-gray-600 hover:text-primary py-2 transition duration-300 border-b border-gray-100 last:border-0"
+            onNavItemClick={()=>{setIsOpen(false)}} />
+
           <a
             href="#contact"
             onClick={(e) => scrollToSection(e, '#contact')}
@@ -179,4 +155,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Header;

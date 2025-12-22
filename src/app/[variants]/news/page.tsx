@@ -1,31 +1,27 @@
 import * as strapi from '@/services/strapi';
-import NewsView from './News.view';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
+import MainSection from './components/MainSection';
+
+// import TitleSection from './components/TitleSection';
 
 interface NewsPageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 const NewsPage: React.FC<NewsPageProps> = async ({ searchParams = {} }) => {
-  const currentPage = parseInt((await searchParams)?.page as string || '1', 10);
-  const pageSize = 10;
+  const params = (await searchParams) || {};
+  const currentPage = parseInt((params.page as string) || '1', 10);
+  const pageSize = 3;
 
-  const { articles, pagination } = await strapi.findManyNews(currentPage, pageSize);
+  const { articles, pagination } = await strapi.findManyArticles({
+    pagination: { page: currentPage, pageSize },
+    filters: {
+      cate: params.cate?.toString(),
+      tag: params.tag?.toString(),
+    },
+  });
 
-  return (
-    <div className="font-sans antialiased text-gray-800">
-      <Navbar />
-      <main>
-        <NewsView
-          articles={articles}
-          currentPage={pagination.page}
-          totalPages={pagination.pageCount}
-        />
-      </main>
-      <Footer />
-    </div>
-  );
+  return <MainSection posts={articles} pagination={pagination} />;
 };
 
 export default NewsPage;

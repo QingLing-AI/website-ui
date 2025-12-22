@@ -48,6 +48,18 @@ export class RouteVariants {
     }
   };
 
+  static isValidVariantsFromProps = async (props: DynamicLayoutProps): Promise<boolean> => {
+    try {
+      const { variants: serialized } = await props.params;
+      const [locale, isMobile, theme] = serialized.split(SPLITTER);
+      // Validate and return variant
+      return ["1", "0"].includes(isMobile) && this.isValidLocale(locale) && this.isValidTheme(theme);
+    } catch {
+      // Return default value on parse failure
+      return false
+    }
+  };
+
   static getVariantsFromProps = async (props: DynamicLayoutProps) => {
     const { variants } = await props.params;
     return RouteVariants.deserializeVariants(variants);

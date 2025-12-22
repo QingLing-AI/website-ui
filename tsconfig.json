@@ -25,10 +25,11 @@
       "@/const/*": ["./packages/const/src/*", "./src/const/*"],
       "@/utils/*": ["./packages/utils/src/*", "./src/utils/*"],
       "@/types/*": ["./packages/types/src/*", "./src/types/*"],
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     },
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true
   },
+  "exclude": ["node_modules"],
   "include": [
     "**/*.d.ts",
     "**/*.ts",
@@ -36,8 +37,5 @@
     ".next/types/**/*.ts",
     "next-env.d.ts",
     ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }
