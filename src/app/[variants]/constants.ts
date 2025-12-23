@@ -1,31 +1,4 @@
-import type { ServiceItem, TeamMember, TestimonialItem } from '@/types/site';
-
-export const TEAM_MEMBERS: TeamMember[] = [
-  {
-    name: 'team.m1.name',
-    role: 'team.m1.role',
-    description: 'team.m1.desc',
-    image:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=300',
-    socials: { linkedin: true, twitter: true, email: true },
-  },
-  {
-    name: 'team.m2.name',
-    role: 'team.m2.role',
-    description: 'team.m2.desc',
-    image:
-      'https://images.unsplash.com/photo-1548689775-de410782ac3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=300',
-    socials: { linkedin: true, github: true, email: true },
-  },
-  {
-    name: 'team.m3.name',
-    role: 'team.m3.role',
-    description: 'team.m3.desc',
-    image:
-      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=300',
-    socials: { linkedin: true, researchgate: true, email: true },
-  },
-];
+import type { ServiceItem, TestimonialItem } from '@/types/site';
 
 export const SERVICES: ServiceItem[] = [
   {
