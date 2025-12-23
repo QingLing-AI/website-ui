@@ -31,6 +31,8 @@ const PostRich: React.FC<{ post: Article }> = ({ post }) => {
   const author = post.author;
   const authorAvatarUrl = author?.avatar?.url;
 
+  const postUrl = `/news/${post.documentId}`;
+
   return (
     <article className="group relative grid grid-cols-1 gap-6 mb-12 border-b border-gray-200 pb-12">
       <div className="relative overflow-hidden rounded-xl shadow-sm aspect-video w-full">
@@ -57,7 +59,7 @@ const PostRich: React.FC<{ post: Article }> = ({ post }) => {
         </div>
 
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4 group-hover:text-brand-700 transition-colors leading-tight">
-          <a href={`#post-${post.documentId}`}>{post.title}</a>
+          <a href={postUrl}>{post.title}</a>
         </h2>
 
         <p className="text-gray-600 text-lg leading-relaxed mb-6 line-clamp-3">
@@ -81,7 +83,7 @@ const PostRich: React.FC<{ post: Article }> = ({ post }) => {
           </div>
 
           <a
-            href={`/news/${post.documentId}`}
+            href={postUrl}
             className="flex items-center text-brand-600 font-semibold hover:text-brand-800 transition-colors group-hover:translate-x-1 duration-300"
           >
             {t('news.readMore')} <ArrowRight size={18} className="ml-1" />

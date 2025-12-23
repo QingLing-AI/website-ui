@@ -15,6 +15,8 @@ const PostItem = ({ post }: { post: Article }) => {
   // const author = post.author;
   // const authorAvatarUrl = author?.avatar?.url;
 
+  const postUrl = `/news/${post.documentId}`;
+
   return (
     <article className="flex flex-col md:flex-row gap-6 mb-10 group border-b border-gray-100 pb-10 last:border-0">
       {/* Left Thumbnail - Fixed width on desktop */}
@@ -40,7 +42,7 @@ const PostItem = ({ post }: { post: Article }) => {
         </div>
 
         <h3 className="text-xl md:text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug">
-          <a href={`#post-${post.id}`}>{post.title}</a>
+          <a href={postUrl}>{post.title}</a>
         </h3>
 
         <p className="text-gray-600 mb-4 line-clamp-2 md:line-clamp-2 leading-relaxed text-sm md:text-base">
