@@ -1,6 +1,6 @@
 {
   "about": {
-    "description": "Founded by a team of PhDs in Digital Economy and Governance from Lingnan University, Hong Kong, QINGLING AI focuses on enterprise-grade large model inference optimization and AI agent development.",
+    "description": "Founded by a team of Doctors in Digital Economy and Governance from Lingnan University, Hong Kong, QINGLING AI focuses on enterprise-grade large model inference optimization and AI agent development.",
     "features": {
       "coop": {
         "desc": "Established strategic partnerships with leading enterprises to provide customized AI solutions.",
@@ -11,7 +11,7 @@
         "title": "Performance Optimization"
       },
       "team": {
-        "desc": "Led by a PhD team, gathering multiple AI experts with deep technical accumulation.",
+        "desc": "Led by a Doctor team, gathering multiple AI experts with deep technical accumulation.",
         "title": "Expert Technical Team"
       }
     },
@@ -113,18 +113,18 @@
   },
   "team": {
     "m1": {
-      "desc": "PhD in Digital Economy, Lingnan University. Former employee of international cloud computing giants with years of AI R&D experience.",
+      "desc": "Doctor in Digital Economy, Lingnan University. Former employee of international cloud computing giants with years of AI R&D experience.",
       "name": "Dr. Yuan",
       "role": "CEO / Founder"
     },
     "m2": {
       "desc": "Former technical lead at an international AI company, specializing in large model performance optimization with multiple patents.",
-      "name": "Dr. Wang",
+      "name": "Dr. Chen",
       "role": "CTO"
     },
     "m3": {
-      "desc": "PhD in AI, participated in multiple national-level AI projects, extensive experience in agent development.",
-      "name": "Dr. Zhang",
+      "desc": "Doctor in AI, participated in multiple national-level AI projects, extensive experience in agent development.",
+      "name": "Dr. Wang",
       "role": "R&D Director"
     },
     "subtitle": "Our team consists of professionals from top universities and enterprises with rich industry experience.",

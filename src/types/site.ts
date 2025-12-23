@@ -1,11 +1,9 @@
-
-
 export interface TeamMember {
   name: string;
   role: string;
   description: string;
   image: string;
-  socials: {
+  socials?: {
     linkedin?: boolean;
     twitter?: boolean;
     github?: boolean;
