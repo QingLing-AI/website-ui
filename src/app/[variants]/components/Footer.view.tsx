@@ -69,7 +69,7 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-phone mr-2 text-primary"></i>
-                  <span className="text-gray-400">+86 13717028300</span>
+                  <span className="text-gray-400">+852-59844855</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-envelope mr-2 text-primary"></i>
