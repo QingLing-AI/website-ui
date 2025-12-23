@@ -69,7 +69,7 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-phone mr-2 text-primary"></i>
-                  <span className="text-gray-400">+86 13717028300</span>
+                  <span className="text-gray-400">0755-86266509</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-envelope mr-2 text-primary"></i>
@@ -82,6 +82,9 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
 
         <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-500 text-xs">
           <p>{t('footer.copyright')}</p>
+          <p className="mt-2">
+            <a href="https://beian.miit.gov.cn/">粤ICP备20240123号-1</a>
+          </p>
         </div>
       </div>
     </footer>
