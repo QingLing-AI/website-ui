@@ -4,13 +4,13 @@
 /* ========== Tailwind 4.x Theme 定义 ========== */
 @layer theme {
   @theme {
-    --color-primary: #4CAF50;
-    --color-primary-dark: #388E3C;
-    --color-primary-light: #8BC34A;
-    --color-primary-pale: #E8F5E9;
+    --color-primary: #416ec7;
+    --color-primary-dark: #2a4da3;
+    --color-primary-light: #6a8ee2;
+    --color-primary-pale: #e6ebfa;
 
-    --font-sans: "Inter", system-ui, sans-serif;
-    --font-serif: "Merriweather", serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: 'Merriweather', serif;
 
     --color-brand-50: var(--color-primary-pale);
     --color-brand-100: var(--color-primary-light);
