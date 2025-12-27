@@ -1,9 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const isProd = process.env.NODE_ENV === 'production';
 const buildWithDocker = process.env.DOCKER === 'true';
 
-const isStandaloneMode = buildWithDocker
+const isStandaloneMode = buildWithDocker;
 
 const standaloneConfig: NextConfig = {
   output: 'standalone',
@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   trailingSlash: true, // Ensure URLs end with trailing slash
+  skipTrailingSlashRedirect: true,
   images: {
     unoptimized: !isProd,
     remotePatterns: [
@@ -41,7 +42,7 @@ const nextConfig: NextConfig = {
         hostname: '*.qingling-ai.*',
       },
     ],
-  }
+  },
 };
 
 export default nextConfig;
