@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -81,9 +82,12 @@ const FooterView: React.FC<FooterProps> = ({ logo_dark }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                  <Link
+                    href="/phd-prog"
+                    className="text-gray-400 hover:text-primary transition-colors"
+                  >
                     {t('services.s5.title')}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

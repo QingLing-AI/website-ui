@@ -24,6 +24,8 @@ export const config = {
     // include the page route
     '/news',
     '/news/(.*)',
+    '/phd-prog',
+    '/phd-prog/(.*)',
     // include the /
     '/',
   ],

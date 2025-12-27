@@ -45,7 +45,7 @@ const Header: React.FC = () => {
             <Image
               src="/logo.png"
               alt="Qingling Tech Logo"
-              width={48}
+              width={106}
               height={48}
               className="h-12 w-auto"
             />
