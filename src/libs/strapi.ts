@@ -56,3 +56,5 @@ export class StrapiClient {
     return await this.client.collection(collection).findOne(`${id}`, options);
   }
 }
+
+export default StrapiClient;

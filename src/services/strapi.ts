@@ -64,7 +64,7 @@ export async function findTags(): Promise<Tag[]> {
  */
 
 const fixupArticleUrl = (article: Article | null) => {
-  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
+  const baseUrl = process.env.STRAPI_BASE_URL || '/';
 
   if (article?.cover?.url.startsWith('/')) {
     article.cover.url = baseUrl + article.cover.url;
@@ -132,7 +132,7 @@ export async function findManyArticles({
     };
 
     return {
-      articles: (data as Article[]).map(fixupArticleUrl),
+      articles: (data as Article[]).map(fixupArticleUrl).filter((a) => !!a),
       pagination: {
         page: paginationData.page,
         pageSize: paginationData.pageSize,
