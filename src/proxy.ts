@@ -26,6 +26,8 @@ export const config = {
     '/news/(.*)',
     '/phd-prog',
     '/phd-prog/(.*)',
+    '/experts',
+    '/experts/(.*)',
     // include the /
     '/',
   ],
