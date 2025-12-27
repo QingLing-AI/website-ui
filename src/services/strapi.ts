@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 import { DEFAULT_LANG } from '@/const/locale';
 import { StrapiClient } from '@/libs/strapi';
 import type { Locales } from '@/locales/resources';
-import type { Article, Category, Tag } from '@/types/strapi';
+import type { Article, Category, Certificate, Tag } from '@/types/strapi';
 
 const getLocale = async (): Promise<Locales> => {
   const locale = (await headers()).get('x-locale') as Locales;
@@ -200,4 +200,33 @@ export async function findOneArticle(id: string) {
   }
 
   return fixupArticleUrl(article as Article);
+}
+
+export async function findExpertByNameAndCertificate(
+  expertName: string,
+  certificateId: string,
+  localeFallback?: boolean,
+): Promise<Certificate | null> {
+  const client = new StrapiClient();
+  const locale = localeFallback ? undefined : await getLocale();
+
+  try {
+    const { data } = await client.findCollection('certificates', {
+      locale,
+      filters: {
+        expertName: { $eq: expertName },
+        certificateId: { $eq: certificateId },
+      },
+    });
+
+    if (data && data.length > 0) {
+      return data[0] as Certificate;
+    }
+    return localeFallback
+      ? null
+      : await findExpertByNameAndCertificate(expertName, certificateId, true);
+  } catch (error) {
+    console.error('Error fetching certificate:', error);
+    return null;
+  }
 }

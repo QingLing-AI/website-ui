@@ -107,3 +107,17 @@ export interface Article extends API.Document {
   cover?: MediaFile;
   blocks?: ArticleBlock[];
 }
+
+/**
+ * 专家证书查询功能
+ */
+export interface Certificate {
+  id: number;
+  documentId: string;
+  certificateId: string;
+  expertName: string;
+  expertPosition: string;
+  publishedAt: string;
+  createdAt: string;
+  updatedAt: string;
+}
