@@ -5,7 +5,7 @@ export default {
     news: '流动新闻',
     services: '核心业务',
     team: '团队介绍',
-    experts: '专家库',
+    experts: '认证专家',
     contact: '联系我们',
     consult: '免费咨询',
   },
