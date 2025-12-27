@@ -9,7 +9,6 @@ import Contact from './components/Contact';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Team from './components/Team';
-import Testimonials from './components/Testimonials';
 import NotFound from './not-found';
 
 const Page = async (props: DynamicLayoutProps) => {
@@ -24,10 +23,8 @@ const Page = async (props: DynamicLayoutProps) => {
         <About />
         <Services />
         <Team />
-        <Testimonials />
         <Contact />
         {/* <Footer /> */}
-
         <BackToTop />
       </>
     );

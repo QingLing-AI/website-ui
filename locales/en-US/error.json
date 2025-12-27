@@ -2,7 +2,7 @@
   "api": {
     "contact": {
       "invalidEmail": "Invalid email format",
-      "missingFields": "Missing required fields: Name, email, and content are required",
+      "missingFields": "Missing required fields: Name, Email, and Content",
       "processFailed": "Failed to process contact form",
       "sendNotificationFailed": "Failed to send email notification"
     }
@@ -14,14 +14,14 @@
     "unknownError": "Unknown Error"
   },
   "form": {
-    "networkError": "Network error, please try again later.",
-    "submitError": "Submission failed, please try again later.",
+    "networkError": "Network error. Please try again later.",
+    "submitError": "Submit failed. Please try again later.",
     "successMessage": "Thank you for your message! We will contact you as soon as possible."
   },
   "validation": {
-    "invalidFormat": "The format is incorrect",
+    "invalidFormat": "Invalid format",
     "maxLength": "The length cannot exceed {{max}} characters",
-    "minLength": "The length cannot be less than {{min}} characters",
+    "minLength": "The length must be at least {{min}} characters",
     "required": "This field is required"
   }
 }

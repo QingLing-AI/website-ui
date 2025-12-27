@@ -15,7 +15,7 @@ export interface TeamMember {
 export interface ServiceItem {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
   features: string[];
 }
 

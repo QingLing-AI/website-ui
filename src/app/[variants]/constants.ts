@@ -2,22 +2,28 @@ import type { ServiceItem, TestimonialItem } from '@/types/site';
 
 export const SERVICES: ServiceItem[] = [
   {
-    icon: 'fa-tachometer-alt',
+    icon: 'fa-earth-asia',
     title: 'services.s1.title',
-    description: 'services.s1.desc',
+    // description: 'services.s1.desc',
     features: ['services.s1.f1', 'services.s1.f2', 'services.s1.f3'],
   },
   {
-    icon: 'fa-robot',
+    icon: 'fa-landmark',
     title: 'services.s2.title',
-    description: 'services.s2.desc',
-    features: ['services.s2.f1', 'services.s2.f2', 'services.s2.f3'],
+    // description: 'services.s2.desc',
+    features: ['services.s2.f1', 'services.s2.f2'],
   },
   {
-    icon: 'fa-server',
+    icon: 'fa-robot',
     title: 'services.s3.title',
-    description: 'services.s3.desc',
+    // description: 'services.s3.desc',
     features: ['services.s3.f1', 'services.s3.f2', 'services.s3.f3'],
+  },
+  {
+    icon: 'fa-user-shield',
+    title: 'services.s4.title',
+    // description: 'services.s4.desc',
+    features: ['services.s4.f1', 'services.s4.f2'],
   },
 ];
 

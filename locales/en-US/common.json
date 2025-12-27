@@ -1,23 +1,23 @@
 {
   "about": {
-    "description": "Founded by a team of Doctors in Digital Economy and Governance from Lingnan University, Hong Kong, QINGLING AI focuses on enterprise-grade large model inference optimization and AI agent development.",
+    "description": "The Hong Kong Digital Economy Governance Research Institute Co., Ltd. was founded by scholars and industry experts in the field of digital economy governance, committed to building an inclusive and innovative digital economy governance framework.",
     "features": {
       "coop": {
-        "desc": "Established strategic partnerships with leading enterprises to provide customized AI solutions.",
-        "title": "Deep Industry Cooperation"
+        "desc": "The Digital Policy Office coordinates the construction of digital government, with the Hong Kong Monetary Authority's 'Commercial Data Access' and the government's 'Authorized Data Exchange Gate' achieving secure data sharing between government and enterprises",
+        "title": "Policy Benefits"
       },
       "perf": {
-        "desc": "Unique technology in large model inference optimization, significantly improving enterprise AI system efficiency.",
-        "title": "Performance Optimization"
+        "desc": "The Hong Kong government is accelerating the construction of AI supercomputing centers, 5G networks, and cross-border data platforms, providing foundational support for research",
+        "title": "Infrastructure Support"
       },
       "team": {
-        "desc": "Led by a Doctor team, gathering multiple AI experts with deep technical accumulation.",
-        "title": "Expert Technical Team"
+        "desc": "Leveraging 'One Country, Two Systems', bridging mainland policies with international rules, making it a 'test bed' for new governance research",
+        "title": "Institutional Advantages"
       }
     },
-    "subDesc": "Our core technical team has served in world-class cloud computing and AI enterprises, possessing rich industrial experience and technical accumulation.",
+    "subDesc": "We have a team of professionals with deep academic background and industry experience. The Research Institute has established good industrial-academic-research collaboration mechanisms with renowned universities and leading corporate entities.",
     "subtitle": "Our Advantages",
-    "title": "About QINGLING AI"
+    "title": "About the Research Institute"
   },
   "categories": {
     "title": "Categories"
@@ -25,59 +25,60 @@
   "contact": {
     "form": {
       "btn": "Submit",
-      "email": "Email Address",
+      "email": "Email",
       "msg": "Message",
       "name": "Your Name",
       "phone": "Phone Number",
       "submitting": "Submitting..."
     },
     "info": {
-      "addr": "Shenzhen Longhua District, Shenzhen North Station Community, Huide Building, Building 1, 13th Floor",
-      "addrTitle": "Address",
+      "addr": "Hong Kong, Wai Yat Street 221, Mei De Industrial Building, 10th Floor, Room D5",
+      "addrTitle": "Company Address",
       "emailTitle": "Email",
-      "follow": "Follow Us",
-      "hours": "Mon-Fri: 9:00 - 18:00",
+      "follow": "Follow us",
+      "hours": "Monday to Friday: 9:00 - 18:.00",
       "hoursTitle": "Working Hours",
-      "phoneTitle": "Phone",
-      "title": "Contact Info"
+      "phoneTitle": "Phone Number",
+      "title": "Contact Information"
     },
-    "subtitle": "Feel free to reach out to us for any questions or needs",
+    "subtitle": "No matter what questions or needs you have, you can contact us through the following methods",
     "title": "Contact Us"
   },
   "cta": {
-    "btn": "Contact Us Now",
-    "subtitle": "Whether you want to optimize existing systems or build AI capabilities from scratch, we offer professional technical support.",
-    "title": "Ready to elevate your AI capabilities?"
+    "btn": "Contact Us Immediately",
+    "subtitle": "Whether you want to optimize existing AI systems or build AI capabilities from scratch, we can provide professional technical support and solutions.",
+    "title": "Are you ready to enhance your AI capabilities?"
   },
   "footer": {
-    "contact": "Contact",
-    "copyright": "© 2025 QINGLING AI (Shenzhen) Co., Ltd. All rights reserved.",
-    "desc": "QINGLING AI is committed to enterprise large model inference optimization and AI agent development.",
+    "contact": "Contact Information",
+    "copyright": "© 2026 Hong Kong Digital Economy Governance Research Institute Co., Ltd. All rights reserved.",
+    "desc": "A leading digital economy governance think tank and technical service center leveraging Hong Kong, radiating across Asia-Pacific, and connecting globally.",
     "links": "Quick Links",
     "services": "Services"
   },
   "hero": {
-    "btnContact": "Contact Us",
-    "btnService": "Our Services",
-    "subtitle": "QINGLING AI is dedicated to helping enterprises build high-performance AI infrastructure, offering comprehensive solutions from AI agent development to large model inference optimization.",
-    "title1": "Enterprise LLM Inference",
-    "title2": "Optimization Experts"
+    "btnContact": "Contact us",
+    "btnService": "Learn about our services",
+    "subtitle": "A top-tier think tank and technical service center for digital economy governance, based in Hong Kong, radiating to Asia-Pacific, and linking globally.",
+    "title1": "Enterprise-Level Large Model Inference",
+    "title2": "IoDEG Hong Kong Digital Economy Governance Research Institute"
   },
   "nav": {
-    "about": "About",
+    "about": "About Us",
     "consult": "Free Consultation",
-    "contact": "Contact",
+    "contact": "Contact Us",
+    "experts": "Expert Library",
     "home": "Home",
-    "news": "News",
-    "services": "Services",
-    "team": "Team"
+    "news": "Flowing News",
+    "services": "Core Services",
+    "team": "Team Introduction"
   },
   "news": {
     "backToNews": "Back to News",
-    "no_articles": "No articles found",
+    "no_articles": "No articles",
     "readMore": "Read more",
-    "title": "Latest Updates",
-    "titleDesc": "Latest updates on our research, products, and company announcements."
+    "title": "Latest News",
+    "titleDesc": "Latest updates on our research findings, products, and company announcements."
   },
   "pagination": {
     "next": "Next",
@@ -85,68 +86,77 @@
   },
   "services": {
     "s1": {
-      "desc": "We optimize inference performance for LLMs and multimodal models, helping enterprises maximize benefits with limited computing power.",
-      "f1": "Reduce Inference Latency",
-      "f2": "Increase Throughput",
-      "f3": "Reduce Operational Costs",
-      "title": "Inference Optimization"
+      "desc": "We optimize inference performance for large language models and multimodal large models, helping enterprises achieve maximum benefits under limited computing power conditions.",
+      "f1": "Participate in global digital governance international standard work",
+      "f2": "Launch the 'Digital Economy Governance Alliance'",
+      "f3": "Digital economy governance research report output",
+      "title": "Global Digital Governance Rules Research and Standard Setting"
     },
     "s2": {
-      "desc": "Custom development of enterprise AI agents, providing personalized solutions based on specific scenarios.",
-      "f1": "Smart Customer Service",
-      "f2": "Content Generation Agents",
-      "f3": "Data Analysis Agents",
-      "title": "AI Agent Development"
+      "desc": "Custom develop enterprise-level AI agents, providing personalized solutions based on specific enterprise scenarios and needs.",
+      "f1": "Government think tank services + digital technology output",
+      "f2": "Provide policy simulation and deduction platform for digital policy offices",
+      "f3": "",
+      "title": "Digital Government Governance Support"
     },
     "s3": {
-      "desc": "Providing AI infrastructure consulting services, including hardware selection, environment setup, and optimization plans.",
-      "f1": "Compute Resource Planning",
-      "f2": "System Architecture Design",
-      "f3": "Deployment & Support",
-      "title": "Infrastructure Consulting"
+      "desc": "Provide AI infrastructure construction consulting services for enterprises, including hardware selection, environment setup and optimization solutions.",
+      "f1": "Build localized AI ethics evaluation system",
+      "f2": "AI safety and algorithm transparency detection tool development",
+      "f3": "Enterprise AI governance certification services",
+      "title": "AI Ethics and Governance Services"
     },
-    "subtitle": "We provide comprehensive enterprise-grade AI solutions to help companies quickly build efficient AI systems.",
+    "s4": {
+      "desc": "",
+      "f1": "Cross-border data flow risk assessment tool development",
+      "f2": "Digital business anti-fraud tools and services",
+      "title": "Cross-border Data Governance and Compliance Services"
+    },
+    "s5": {
+      "title": "IoDEG Part-time Doctoral Student Program"
+    },
+    "subtitle": "We provide comprehensive policy research and digital tool solutions.",
     "title": "Core Business"
   },
   "tags": {
-    "title": "Tag"
+    "title": "Tags"
   },
   "team": {
     "m1": {
-      "desc": "Doctor in Digital Economy, Lingnan University. Former employee of international cloud computing giants with years of AI R&D experience.",
-      "name": "Dr. Yuan",
-      "role": "CEO / Founder"
+      "desc": "Dr. Liu Chong studied Industrial and Civil Construction at Tongji University in 1984, and subsequently achieved successful industrial practice in real estate construction, agriculture, and technology fields. Liu Chong currently also serves as the President of Tongji University Shenzhen Alumni Association.",
+      "name": "Dr. LIU",
+      "role": "Chairman of the Board"
     },
     "m2": {
-      "desc": "Former technical lead at an international AI company, specializing in large model performance optimization with multiple patents.",
-      "name": "Dr. Chen",
-      "role": "CTO"
+      "desc": "Dr. Ewan YUAN previously worked at internationally renowned cloud computing enterprises and has nearly 20 years of experience in the digital industry. Dr. YUAN currently also serves as a mentor and advisor at the Chinese University of Hong Kong (Shenzhen) and Wuhan University Shenzhen Research Institute.",
+      "name": "Dr. YUAN",
+      "role": "Director"
     },
     "m3": {
-      "desc": "Doctor in AI, participated in multiple national-level AI projects, extensive experience in agent development.",
-      "name": "Dr. Wang",
-      "role": "R&D Director"
+      "desc": "Dr. WANG specializes in digital economy and artificial intelligence fields, with extensive academic and industrial experience, and has authored multiple publications in the AI field.",
+      "name": "Dr. WANG",
+      "role": "Director"
     },
-    "subtitle": "Our team consists of professionals from top universities and enterprises with rich industry experience.",
+    "subtitle": "Our team consists of professional talents from top universities and enterprises, with extensive industry experience.",
     "title": "Core Team"
   },
   "testimonials": {
     "subtitle": "Hear what our clients say about our services",
     "t1": {
       "author": "Director Chen",
-      "content": "QINGLING AI's optimization solution helped us reduce inference costs by 60% while improving system response speed. Their professional knowledge is impressive.",
-      "role": "AI Dept, Tech Company"
+      "content": "The large model optimization solution provided by Qingling Technology has helped us reduce inference costs by 60% while improving system response speed. Their expertise and technical support are impressive.",
+      "role": "AI Department, A Technology Company"
     },
     "t2": {
       "author": "Manager Lin",
-      "content": "The customer service agent developed with QINGLING AI perfectly fits our business needs. Speed and accuracy exceeded expectations.",
-      "role": "E-commerce Platform"
+      "content": "The intelligent customer service agent developed in collaboration with Qingling Technology perfectly aligns with our business needs. The agent's response speed and accuracy far exceeded our expectations, significantly enhancing customer satisfaction.",
+      "role": "An E-commerce Platform"
     },
     "t3": {
       "author": "Engineer Zhao",
-      "content": "The team gave us valuable advice on AI infrastructure, helping us avoid common mistakes and saving time and money. Highly trustworthy.",
-      "role": "Fintech Company"
+      "content": "The Qingling Technology team provided valuable advice on AI infrastructure setup, helping us avoid many common pitfalls and saving considerable time and costs. Their professional expertise is highly reliable.",
+      "role": "A Financial Technology Company"
     },
-    "title": "Client Feedback"
+    "title": "Customer Testimonials"
   }
 }

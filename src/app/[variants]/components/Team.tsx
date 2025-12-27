@@ -60,14 +60,14 @@ const Team: React.FC = () => {
       name: t('team.m1.name'),
       role: t('team.m1.role'),
       description: t('team.m1.desc'),
-      image: '/images/m-yuan.png',
+      image: '/images/m-liu.png',
       // socials: { linkedin: true, twitter: true, email: true },
     },
     {
       name: t('team.m2.name'),
       role: t('team.m2.role'),
       description: t('team.m2.desc'),
-      image: '/images/m-chen.png',
+      image: '/images/m-yuan.png',
       // socials: { linkedin: true, github: true, email: true },
     },
     {

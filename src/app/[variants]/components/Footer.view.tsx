@@ -1,14 +1,14 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface FooterProps {
   logo_dark?: string;
 }
 
-const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
+const FooterView: React.FC<FooterProps> = ({ logo_dark }) => {
   const { t } = useTranslation();
 
   return (
@@ -16,18 +16,23 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-1 mb-8">
           <div className="md:col-span-2 mb-8 md:mb-0">
-            <div className="h-12 mb-4">
-              <Image width={48} height={48} className='bg-white'
-                src={logo_dark || "/logo-dark.png"}
+            <div className="h-12 mb-4 relative">
+              <Image
+                width={380}
+                height={170}
+                className="bg-white h-12 w-auto"
+                src={logo_dark || '/logo-dark.png'}
                 alt="Qingling Logo"
               />
             </div>
-            <p className="text-gray-400 max-w-xs text-sm leading-relaxed">
-              {t('footer.desc')}
-            </p>
+            <p className="text-gray-400 max-w-xs text-sm leading-relaxed">{t('footer.desc')}</p>
             <div className="flex space-x-4 mt-6">
               {['weixin', 'linkedin', 'github', 'zhihu'].map((social) => (
-                <a key={social} href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  key={social}
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   <i className={`fab fa-${social} text-xl`}></i>
                 </a>
               ))}
@@ -40,7 +45,10 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
               <ul className="space-y-2 text-sm">
                 {['home', 'about', 'services', 'team', 'contact'].map((link) => (
                   <li key={link}>
-                    <a href={`#${link}`} className="text-gray-400 hover:text-primary transition-colors">
+                    <a
+                      href={`#${link}`}
+                      className="text-gray-400 hover:text-primary transition-colors"
+                    >
                       {/* @ts-ignore */}
                       {t(`nav.${link}`)}
                     </a>
@@ -52,11 +60,31 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
             <div>
               <h4 className="text-lg font-semibold mb-4">{t('footer.services')}</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">{t('services.s1.title')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">{t('services.s2.title')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">{t('services.s3.title')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">AI Training</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Tech Support</a></li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s1.title')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s2.title')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s3.title')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s4.title')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s5.title')}
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -69,11 +97,11 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-phone mr-2 text-primary"></i>
-                  <span className="text-gray-400">+86 13717028300</span>
+                  <span className="text-gray-400">+852-69052966；67987277</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-envelope mr-2 text-primary"></i>
-                  <span className="text-gray-400">kf@qingling-ai.com</span>
+                  <span className="text-gray-400">info@iodeg.hk</span>
                 </li>
               </ul>
             </div>

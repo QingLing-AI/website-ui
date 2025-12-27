@@ -12,12 +12,12 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
         <div className="md:w-1/2 mt-10 md:mt-0 z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            <span className="block">{t('hero.title1')}</span>
+            {/* <span className="block">{t('hero.title1')}</span> */}
             <span className="bg-linear-to-r from-primary to-primary-dark bg-clip-text text-transparent">
               {t('hero.title2')}
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-lg">{t('hero.subtitle')}</p>
+          <p className="text-lg text-gray-600 mb-8 ">{t('hero.subtitle')}</p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="#services"

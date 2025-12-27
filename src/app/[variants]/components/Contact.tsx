@@ -1,10 +1,9 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
-
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -47,41 +46,94 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="pb-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contact.title')}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {t('contact.subtitle')}
-          </p>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">{t('contact.subtitle')}</p>
         </div>
 
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">{t('contact.form.name')}</label>
-                <input required type="text" id="name" name="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.name')} />
+                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                  {t('contact.form.name')}
+                </label>
+                <input
+                  required
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  placeholder={t('contact.form.name')}
+                />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">{t('contact.form.email')}</label>
-                <input required type="email" id="email" name="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.email')} />
+                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                  {t('contact.form.email')}
+                </label>
+                <input
+                  required
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  placeholder={t('contact.form.email')}
+                />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">{t('contact.form.phone')}</label>
-                <input type="tel" id="phone" name="phone" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.phone')} />
+                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+                  {t('contact.form.phone')}
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  placeholder={t('contact.form.phone')}
+                />
               </div>
               <div>
-                <label htmlFor="content" className="block text-gray-700 font-medium mb-2">{t('contact.form.msg')}</label>
-                <textarea required id="content" name="content" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder={t('contact.form.msg')}></textarea>
+                <label htmlFor="content" className="block text-gray-700 font-medium mb-2">
+                  {t('contact.form.msg')}
+                </label>
+                <textarea
+                  required
+                  id="content"
+                  name="content"
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  placeholder={t('contact.form.msg')}
+                ></textarea>
               </div>
-              <button type="submit" disabled={isLoading} className={`w-full ${isLoading ? 'bg-primary-dark opacity-70 cursor-not-allowed' : 'bg-primary hover:bg-primary-dark'} text-white px-8 py-3 rounded-full font-medium shadow-lg transition-all ${!isLoading ? 'transform hover:scale-[1.02]' : ''}`}>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={`w-full ${isLoading ? 'bg-primary-dark opacity-70 cursor-not-allowed' : 'bg-primary hover:bg-primary-dark'} text-white px-8 py-3 rounded-full font-medium shadow-lg transition-all ${!isLoading ? 'transform hover:scale-[1.02]' : ''}`}
+              >
                 {isLoading ? (
                   <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                     {t('contact.form.submitting')}
                   </span>
@@ -117,7 +169,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.phoneTitle')}</h4>
-                    <p className="text-gray-600">0755-86266509</p>
+                    <p className="text-gray-600">+852-69052966；67987277</p>
                   </div>
                 </div>
 
@@ -129,7 +181,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.emailTitle')}</h4>
-                    <p className="text-gray-600">kf@qingling-ai.com</p>
+                    <p className="text-gray-600">info@iodeg.hk</p>
                   </div>
                 </div>
 
@@ -141,7 +193,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t('contact.info.hoursTitle')}</h4>
-                    <p className="text-gray-600">{t("contact.info.hours")}</p>
+                    <p className="text-gray-600">{t('contact.info.hours')}</p>
                   </div>
                 </div>
               </div>
@@ -150,7 +202,11 @@ const Contact = () => {
                 <h4 className="text-lg font-semibold mb-4">{t('contact.info.follow')}</h4>
                 <div className="flex space-x-4">
                   {['weixin', 'linkedin', 'github', 'zhihu'].map((social) => (
-                    <a key={social} href="#" className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all transform hover:scale-110">
+                    <a
+                      key={social}
+                      href="#"
+                      className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all transform hover:scale-110"
+                    >
                       <i className={`fab fa-${social}`}></i>
                     </a>
                   ))}
