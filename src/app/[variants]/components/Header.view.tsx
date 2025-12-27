@@ -10,12 +10,12 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'nav.home', href: '#home' },
-  { label: 'nav.about', href: '#about' },
+  { label: 'nav.home', href: '/#home' },
+  { label: 'nav.about', href: '/#about' },
   { label: 'nav.news', href: '/news' },
-  { label: 'nav.services', href: '#services' },
-  { label: 'nav.team', href: '#team' },
-  { label: 'nav.contact', href: '#contact' },
+  { label: 'nav.services', href: '/#services' },
+  { label: 'nav.team', href: '/#team' },
+  { label: 'nav.contact', href: '/#contact' },
 ];
 
 interface NavViewProps {
