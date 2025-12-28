@@ -41,6 +41,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '*.qingling-ai.*',
       },
+      {
+        protocol: 'https',
+        hostname: '*.iodeg.hk',
+      },
     ],
   },
 };
