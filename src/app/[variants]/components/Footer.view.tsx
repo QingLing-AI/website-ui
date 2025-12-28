@@ -1,14 +1,14 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface FooterProps {
   logo_dark?: string;
 }
 
-const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
+const FooterView: React.FC<FooterProps> = ({ logo_dark }) => {
   const { t } = useTranslation();
 
   return (
@@ -17,17 +17,22 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-1 mb-8">
           <div className="md:col-span-2 mb-8 md:mb-0">
             <div className="h-12 mb-4">
-              <Image width={48} height={48} className='bg-white'
-                src={logo_dark || "/logo-dark.png"}
+              <Image
+                width={48}
+                height={48}
+                className="bg-white"
+                src={logo_dark || '/logo-dark.png'}
                 alt="Qingling Logo"
               />
             </div>
-            <p className="text-gray-400 max-w-xs text-sm leading-relaxed">
-              {t('footer.desc')}
-            </p>
+            <p className="text-gray-400 max-w-xs text-sm leading-relaxed">{t('footer.desc')}</p>
             <div className="flex space-x-4 mt-6">
               {['weixin', 'linkedin', 'github', 'zhihu'].map((social) => (
-                <a key={social} href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  key={social}
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   <i className={`fab fa-${social} text-xl`}></i>
                 </a>
               ))}
@@ -40,7 +45,10 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
               <ul className="space-y-2 text-sm">
                 {['home', 'about', 'services', 'team', 'contact'].map((link) => (
                   <li key={link}>
-                    <a href={`#${link}`} className="text-gray-400 hover:text-primary transition-colors">
+                    <a
+                      href={`#${link}`}
+                      className="text-gray-400 hover:text-primary transition-colors"
+                    >
                       {/* @ts-ignore */}
                       {t(`nav.${link}`)}
                     </a>
@@ -52,11 +60,31 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
             <div>
               <h4 className="text-lg font-semibold mb-4">{t('footer.services')}</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">{t('services.s1.title')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">{t('services.s2.title')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">{t('services.s3.title')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">AI Training</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Tech Support</a></li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s1.title')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s2.title')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    {t('services.s3.title')}
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    AI Training
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                    Tech Support
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -83,7 +111,7 @@ const FooterView: React.FC<FooterProps> = ({logo_dark}) => {
         <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-500 text-xs">
           <p>{t('footer.copyright')}</p>
           <p className="mt-2">
-            <a href="https://beian.miit.gov.cn/">粤ICP备20240123号-1</a>
+            <a href="https://beian.miit.gov.cn/">粤ICP备2025511308号-1</a>
           </p>
         </div>
       </div>
