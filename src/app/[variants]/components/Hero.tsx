@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
         <div className="md:w-1/2 mt-10 md:mt-0 z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            {/* <span className="block">{t('hero.title1')}</span> */}
+            <span className="block">{t('hero.title1')}</span>
             <span className="bg-linear-to-r from-primary to-primary-dark bg-clip-text text-transparent">
               {t('hero.title2')}
             </span>

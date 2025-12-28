@@ -60,8 +60,8 @@
     "btnContact": "Contact us",
     "btnService": "Learn about our services",
     "subtitle": "A top-tier think tank and technical service center for digital economy governance, based in Hong Kong, radiating to Asia-Pacific, and linking globally.",
-    "title1": "Enterprise-Level Large Model Inference",
-    "title2": "IoDEG Hong Kong Digital Economy Governance Research Institute"
+    "title1": "IoDEG Hong Kong",
+    "title2": "Digital Economy Governance Research Institute"
   },
   "nav": {
     "about": "About Us",
@@ -86,11 +86,11 @@
   },
   "services": {
     "s1": {
-      "desc": "We optimize inference performance for large language models and multimodal large models, helping enterprises achieve maximum benefits under limited computing power conditions.",
+      "desc": "",
       "f1": "Participate in global digital governance international standard work",
       "f2": "Launch the 'Digital Economy Governance Alliance'",
       "f3": "Digital economy governance research report output",
-      "title": "Global Digital Governance Rules Research and Standard Setting"
+      "title": "Digital Governance Rules Research and Standard Setting"
     },
     "s2": {
       "desc": "Custom develop enterprise-level AI agents, providing personalized solutions based on specific enterprise scenarios and needs.",
