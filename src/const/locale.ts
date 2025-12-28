@@ -1,6 +1,6 @@
 import { supportLocales } from '@/locales/resources';
 
-export const DEFAULT_LANG = 'zh-CN';
+export const DEFAULT_LANG = 'zh-HK';
 export const LOCALE_COOKIE = 'QL_LOCALE';
 
 /**
